@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_19.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_20.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -457,17 +457,14 @@ Zero technical terms. Speak directly to ${name}. Specific timing. Confident pred
 });
 
 function renderReading(text){
-  // Split on **Title** markers and render as styled sections
   const parts=text.split(/\*\*([^*]+)\*\*/);
   let html='';
   for(let i=0;i<parts.length;i++){
     if(i%2===1){
-      // This is a title
-      html+=`<div class="rsection-title">${parts[i]}</div>`;
+      html+=`<div class="rsection-title">${parts[i].trim()}</div>`;
     } else {
-      // This is body text — trim leading newlines
-      const body=parts[i].replace(/^\n+/,'').replace(/\n+$/,'');
-      if(body) html+=`<div class="rsection-body">${body.replace(/\n/g,'<br>')}</div>`;
+      const body=parts[i].replace(/^\n+/,'').replace(/\n+$/,'').trim();
+      if(body) html+=`<div class="rsection-body">${body.replace(/\n/g,'<br><br>')}</div>`;
     }
   }
   return html;
@@ -579,7 +576,7 @@ TASK: Tell them ${focusMap[focus]||focusMap.general}.
 RULES — NON NEGOTIABLE:
 Today is exactly ${todayStr}. ${NOW_MONTH>=3?`Spring begins around March 20 — it has NOT started yet as of today.`:''} Never reference any date or period already in the past. Never say "before spring" or "this spring" without specifying the exact month. Always use specific months like "in April" or "by June" — never vague seasonal terms alone. Every sentence is a prediction about the FUTURE from today onward. Zero technical terms. Speak directly to ${name} as "you". Use confident language: "this will", "you will", "expect" — never "might" or "could". Include hard periods honestly. Where both systems agree say "every signal points to [specific month/year]".
 
-Structure (use these exact bold headers):
+Structure — use these EXACT bold headers, each on its own line with a blank line before the body text:
 ${structure}
 
 Write at least 600 words. Complete every sentence fully — do not trail off or cut short. Every sentence feels like someone who has seen the whole map of their life is finally telling them the truth.`;
@@ -587,7 +584,7 @@ Write at least 600 words. Complete every sentence fully — do not trail off or 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
   loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
   try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2500,stream:true,messages:[{role:'user',content:prompt}]})});
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:3000,stream:true,messages:[{role:'user',content:prompt}]})});
     if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||`Error ${res.status}`);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
