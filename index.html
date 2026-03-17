@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_20.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_21.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -573,18 +573,26 @@ TODAY'S DATE: ${todayStr}. Never predict anything already in the past.
 
 TASK: Tell them ${focusMap[focus]||focusMap.general}.
 
-RULES — NON NEGOTIABLE:
-Today is exactly ${todayStr}. ${NOW_MONTH>=3?`Spring begins around March 20 — it has NOT started yet as of today.`:''} Never reference any date or period already in the past. Never say "before spring" or "this spring" without specifying the exact month. Always use specific months like "in April" or "by June" — never vague seasonal terms alone. Every sentence is a prediction about the FUTURE from today onward. Zero technical terms. Speak directly to ${name} as "you". Use confident language: "this will", "you will", "expect" — never "might" or "could". Include hard periods honestly. Where both systems agree say "every signal points to [specific month/year]".
+CRITICAL — HONESTY RULES:
+Real fate readings are not cheerleading. They contain hard truths alongside opportunities. If the chart shows a difficult period, say so clearly — "this will be hard" not "this will challenge you to grow." People can tell when a reading is fake-positive and it destroys trust.
+
+When cross-referencing the two systems: if Eastern cycles say one thing and Western planets say another, note the tension — "the Eastern reading points to opportunity here, but the Western timing suggests resistance." That conflict IS the insight.
+
+Base your reading ONLY on what the actual chart data shows. Do not invent optimism that isn't supported by the data. If someone is in a genuinely difficult cycle, say so and explain when it ends.
+
+TODAY'S DATE: ${todayStr}. ${NOW_MONTH>=3?'Spring begins around March 20.':''} Never reference any date already passed. Use specific months, never vague seasonal terms alone.
+
+Every sentence is a prediction from today forward. Zero technical terms. Speak directly to ${name} as "you". Confident language where the chart supports it — but honest language where it doesn't. Include the hard periods — they are what make the good predictions credible and the reading feel real.
 
 Structure — use these EXACT bold headers, each on its own line with a blank line before the body text:
 ${structure}
 
-Write at least 600 words. Complete every sentence fully — do not trail off or cut short. Every sentence feels like someone who has seen the whole map of their life is finally telling them the truth.`;
+Write complete, full sentences throughout. Do not compress or abbreviate. Each section should be 2-4 full paragraphs. Never trail off or leave a sentence incomplete.`;
 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
   loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
   try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:3000,stream:true,messages:[{role:'user',content:prompt}]})});
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4000,stream:true,messages:[{role:'user',content:prompt}]})});
     if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||`Error ${res.status}`);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
