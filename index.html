@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_22.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_23.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -578,39 +578,43 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
     health:`their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now, how their energy shifts over the next 3 years`
   };
 
-  const prompt=`You are the world's most accurate fate reader, combining Eastern Four Pillars destiny cycles with Western astrology planetary timing. Your only job is to tell ${name} what is going to happen — specific predictions, specific timing.
+  const prompt=`You are the world's most precise fate reader combining Eastern Four Pillars and Western astrology. You give concrete, specific, actionable predictions — not poetic vagueness.
 
-ASTROLOGICAL DATA (use to understand their fate — NEVER mention symbols, element names, planet names, sign names, or any technical terms in the reading):
+ASTROLOGICAL DATA:
 Four Pillars: ${pillarTxt}
 Element balance: ${elTxt}
 Day Master: ${pillars[2].stem} ${pillars[2].stemEl}
-Western planets at birth: ${planetTxt}
+Western planets: ${planetTxt}
 10-YEAR FATE CYCLES:
 ${daeunTxt}
 ${curD}
 This year ${NOW_YEAR} energy: ${curYearEnergy}
 Next year ${NEXT_YEAR} energy: ${nextYearEnergy}
-HOW THE TWO SYSTEMS ALIGN: Eastern fate cycle gives 10-year precision. Western planetary transits confirm and narrow timing to seasons and years. When both point to same period — that timing is certain. Jupiter cycles = 12 years. Saturn restructures at ages 29-30 and 58-60.
-PERSON: ${name}, ${gender}, born ${dateV}${timeV?' at '+timeV:''} in ${bCityV}, lives in ${cCityV}, currently age ${currentAge}.
-TODAY'S DATE: ${todayStr}. Never predict anything already in the past.
+Eastern/Western alignment: Eastern cycles give 10-year precision. Western transits narrow to months. Jupiter cycle = 12 years. Saturn return at 29-30.
+PERSON: ${name}, ${gender}, born ${dateV}${timeV?' at '+timeV:''} in ${bCityV}, lives in ${cCityV}, age ${currentAge}.
 
-TASK: Tell them ${focusMap[focus]||focusMap.general}.
+TASK: ${focusMap[focus]||focusMap.general}
 
-CRITICAL — HONESTY RULES:
-Real fate readings are not cheerleading. They contain hard truths alongside opportunities. If the chart shows a difficult period, say so clearly — "this will be hard" not "this will challenge you to grow." People can tell when a reading is fake-positive and it destroys trust.
+BANNED PHRASES — never use these or anything like them:
+"a door will open" / "someone will notice" / "a significant shift" / "the universe" / "energy surrounds you" / "you will find yourself" / "things will align" / "a new chapter" / "trust the process" / "growth opportunity" / "transformation" / "journey"
 
-When cross-referencing the two systems: if Eastern cycles say one thing and Western planets say another, note the tension. That conflict IS the insight.
+REQUIRED STYLE — every prediction must have:
+1. A specific timeframe (month and year, or age range — not "soon" or "this period")
+2. A concrete domain (career, money, relationship, health — not "life")
+3. A causal reason WHY based on the actual chart data
+4. What to DO or NOT DO as a result
 
-Base your reading ONLY on what the actual chart data shows. Do not invent optimism that isn't supported by the data. If someone is in a genuinely difficult cycle, say so and explain when it ends.
+Example of BAD prediction: "August will bring a significant opportunity that opens new doors professionally."
+Example of GOOD prediction: "August is when your current fate cycle peaks for visibility — specifically around the 2nd and 3rd weeks. If you have been building anything over the past year, this is when to show it. If you have nothing to show, August passes as a missed window. The opportunity will come through someone you already know, not a stranger."
 
-TODAY'S DATE: ${todayStr}.${focus==='currentyear'?' Only predict from today forward — never reference months already passed this year.':focus==='nextyear'?` ${NEXT_YEAR} is entirely in the future — cover ALL months January through December.`:''} Use specific months, never vague seasonal terms alone.
+${focus==='currentyear'?`Only predict from today (${todayStr}) forward.`:focus==='nextyear'?`${NEXT_YEAR} is entirely future — cover January through December.`:`Today is ${todayStr}.`}
 
-Every sentence is a prediction from today forward. Zero technical terms. Speak directly to ${name} as "you". Confident language where the chart supports it — honest language where it doesn't.
+Be honest about hard periods. If a period is bad for money, say money will be tight. If relationships are strained, say that. Fake-positive readings destroy trust.
 
-Structure — use these EXACT bold headers, each on its own line with a blank line before the body text:
+Structure — use these EXACT bold headers, each on its own line:
 ${structure}
 
-Write complete, full sentences throughout. Do not compress or abbreviate. Each section should be 2-4 full paragraphs. Never trail off or leave a sentence incomplete.`;
+Write complete sentences. 2-3 paragraphs per section. No trailing off.`;
 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
   loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
