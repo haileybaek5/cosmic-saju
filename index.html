@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_17.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_18.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -179,15 +179,16 @@ select option{background:#12131f;color:#e8e4f0;}
           <select id="cal"><option value="solar">Solar (Gregorian)</option><option value="lunar">Lunar</option></select>
         </div>
         <div class="field"><label class="fl">Birth Date</label><input type="date" id="bdate"></div>
-        <div class="field"><label class="fl">Birth Time</label><input type="time" id="btime" step="60"></div>
+        <div class="field"><label class="fl">Birth Time <span style="font-size:10px;color:rgba(232,228,240,0.35);letter-spacing:1px;text-transform:none;font-family:sans-serif;">— optional</span></label><input type="time" id="btime" step="60"></div>
       </div>
       <div class="field"><label class="fl">Birth Time Note</label>
         <select id="topt">
+          <option value="unknown">I don't know my birth time — that's okay</option>
           <option value="known">I know my exact birth time</option>
           <option value="jojasi">Born between 11pm and midnight</option>
           <option value="jajasi">Born between midnight and 1am</option>
-          <option value="unknown">I don't know my birth time</option>
         </select>
+        <p class="fnote">Birth time improves accuracy but the reading works without it</p>
       </div>
       <div class="field"><label class="fl">Birth City</label>
         <div class="city-wrap"><input type="text" id="bcity" placeholder="City you were born in..." autocomplete="off"><div class="sugg" id="bsugg"></div></div>
@@ -529,7 +530,24 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   const curYearEnergy=`${STEMS[curYearIdx%10]}${BRANCHES[curYearIdx%12]} ${STEM_EL[curYearIdx%10]}/${BRANCH_EL[curYearIdx%12]}`;
   const nextYearEnergy=`${STEMS[nextYearIdx%10]}${BRANCHES[nextYearIdx%12]} ${STEM_EL[nextYearIdx%10]}/${BRANCH_EL[nextYearIdx%12]}`;
 
-  const focusMap={
+  const structure = focus==='currentyear' ? `
+**Where You Are in ${NOW_YEAR}**  — what this moment in the year means, what's already happened energetically, what phase you're entering now
+**${MONTH_NAMES[NOW_MONTH-1]} through June** — specific predictions month by month for the near term
+**July through September** — what this window holds
+**October through December** — how the year closes out
+**The One Thing** — the single most important action to take before ${NOW_YEAR} ends` 
+  : focus==='nextyear' ? `
+**The Theme of ${NEXT_YEAR}** — what this year is fundamentally about for them
+**First Half (January–June)** — quarter by quarter
+**Second Half (July–December)** — quarter by quarter  
+**Your Biggest Opportunity** — the single best window in ${NEXT_YEAR} and what to do with it
+**What to Prepare Now** — 3 things to do before ${NEXT_YEAR} starts`
+  : `
+**Where You Stand Right Now** — what this exact moment means, what cycle they're in, how long it lasts
+**The Next Three Years** — ${NOW_YEAR}, ${NEXT_YEAR}, ${NOW_YEAR+2} specific predictions for each
+**Your Biggest Window** — when the single most significant opportunity of the next decade arrives
+**What Both Systems Agree On** — the prediction that shows up in BOTH Eastern cycles AND Western planetary timing
+**Act On This Now** — 3 specific actions`;
     general:`the major fate turning points across the next 5-10 years — when the big shifts happen, what each phase is building toward, and what their overall destiny arc looks like`,
     career:`their career and financial future — when their biggest professional breakthrough arrives, what ${NOW_YEAR}-${NOW_YEAR+2} look like for money and ambition, and the single most important career move to make right now`,
     love:`their romantic future — what kind of relationship is coming, when the most significant romantic window opens, what patterns are ending, and what ${NOW_YEAR}-${NOW_YEAR+1} holds for their love life`,
@@ -557,21 +575,17 @@ TODAY'S DATE: ${todayStr}. Never predict anything already in the past.
 TASK: Tell them ${focusMap[focus]||focusMap.general}.
 
 RULES — NON NEGOTIABLE:
-Today is ${todayStr} — never predict something in the past, never reference months already gone. Every sentence is a prediction about the FUTURE from today onward. Zero technical terms. Speak directly to ${name} as "you". Give SPECIFIC timing — exact years, age ranges, seasonal windows. Use confident language: "this will", "you will", "expect" — never "might" or "could". Include hard periods honestly — they make good predictions believable. Where both systems agree on timing say "every signal points to [year]". Make them feel the relief of knowing — "this difficult stretch ends in [year]".
+Today is exactly ${todayStr}. ${NOW_MONTH>=3?`Spring begins around March 20 — it has NOT started yet as of today.`:''} Never reference any date or period already in the past. Never say "before spring" or "this spring" without specifying the exact month. Always use specific months like "in April" or "by June" — never vague seasonal terms alone. Every sentence is a prediction about the FUTURE from today onward. Zero technical terms. Speak directly to ${name} as "you". Use confident language: "this will", "you will", "expect" — never "might" or "could". Include hard periods honestly. Where both systems agree say "every signal points to [specific month/year]".
 
-Structure (bold headers):
-**Where You Stand Right Now** — what this exact moment means, what cycle they're in, how long it lasts
-**The Next Three Years** — 2026, 2027, 2028 specific predictions for each
-**Your Biggest Window** — when the single most significant opportunity of the next decade arrives and what to do to be ready
-**What Both Systems Agree On** — the prediction that shows up in BOTH Eastern cycles AND Western planetary timing
-**Act On This Now** — 3 specific actions tied to where they are in their fate cycle
+Structure (use these exact bold headers):
+${structure}
 
-580 words. Every sentence feels like someone who has seen the whole map of their life is finally telling them the truth. No hedging.`;
+Write at least 600 words. Complete every sentence fully — do not trail off or cut short. Every sentence feels like someone who has seen the whole map of their life is finally telling them the truth.`;
 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
   loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
   try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1600,stream:true,messages:[{role:'user',content:prompt}]})});
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2500,stream:true,messages:[{role:'user',content:prompt}]})});
     if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||`Error ${res.status}`);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
