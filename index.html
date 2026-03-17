@@ -1,126 +1,124 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_11.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cosmic Saju</title>
-<link href="./index_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#07080f;--paper:#e8e4f0;--gold:#c9a84c;--red:#c0392b;--star:#a8c4e0;--muted:#9a94b0;}
-body{background:var(--ink);color:var(--paper);font-family:'EB Garamond',serif;min-height:100vh;padding:0 0 60px;}
+:root{--ink:#07080f;--paper:#e8e4f0;--gold:#c9a84c;--red:#c0392b;--star:#a8c4e0;}
+body{background:var(--ink);color:var(--paper);font-family:'EB Garamond',serif;min-height:100vh;padding:0 0 80px;font-size:18px;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(201,168,76,0.05) 0%,transparent 50%),radial-gradient(ellipse at 85% 20%,rgba(124,111,160,0.07) 0%,transparent 50%);pointer-events:none;z-index:0;}
-.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 20px;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 48px;}
 
-.hero{text-align:center;padding:48px 20px 40px;border-bottom:1px solid rgba(255,255,255,0.08);}
-.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,76,0.3);padding:5px 16px;margin-bottom:16px;border-radius:2px;}
-.be{font-size:10px;letter-spacing:2px;color:var(--gold);font-family:sans-serif;}
-.bsep{width:1px;height:12px;background:rgba(255,255,255,0.2);}
-.bw{font-size:10px;letter-spacing:2px;color:var(--star);font-family:sans-serif;}
-h1{font-family:'Cinzel',serif;font-size:34px;font-weight:600;letter-spacing:7px;background:linear-gradient(135deg,var(--gold) 0%,var(--paper) 50%,var(--star) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
-.sub{font-size:13px;color:#9a94b0;letter-spacing:3px;font-family:sans-serif;margin-bottom:24px;}
-.dualline{display:flex;align-items:center;justify-content:center;gap:16px;font-size:12px;letter-spacing:1.5px;font-family:sans-serif;}
+/* HERO */
+.hero{text-align:center;padding:60px 20px 52px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(201,168,76,0.3);padding:7px 20px;margin-bottom:20px;border-radius:2px;}
+.be{font-size:11px;letter-spacing:2px;color:var(--gold);font-family:sans-serif;}
+.bsep{width:1px;height:14px;background:rgba(255,255,255,0.2);}
+.bw{font-size:11px;letter-spacing:2px;color:var(--star);font-family:sans-serif;}
+h1{font-family:'Cinzel',serif;font-size:56px;font-weight:600;letter-spacing:10px;background:linear-gradient(135deg,var(--gold) 0%,var(--paper) 50%,var(--star) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+.sub{font-size:15px;color:#9a94b0;letter-spacing:4px;font-family:sans-serif;margin-bottom:28px;}
+.dualline{display:flex;align-items:center;justify-content:center;gap:20px;font-size:14px;letter-spacing:2px;font-family:sans-serif;}
 .de{color:rgba(201,168,76,0.7)}.dw{color:rgba(168,196,224,0.7)}.dx{color:rgba(255,255,255,0.2)}
 
-.merit{padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
-.merit p{font-size:16px;line-height:1.95;color:rgba(232,228,240,0.75);margin-bottom:18px;}
-.merit p:last-child{margin-bottom:0;}
-.merit em{color:#e8e4f0;font-style:normal;}
-.merit-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0;}
-.mcard{padding:22px 20px;border-radius:3px;font-family:sans-serif;}
+/* MERIT */
+.merit{padding:52px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.merit-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.mcard{padding:28px 24px;border-radius:3px;font-family:sans-serif;}
 .mc-e{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.25);}
 .mc-w{background:rgba(168,196,224,0.06);border:1px solid rgba(168,196,224,0.25);}
 .mc-b{background:rgba(147,112,219,0.06);border:1px solid rgba(147,112,219,0.25);grid-column:1/-1;}
-.mc-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.mc-title{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
 .mc-e .mc-title{color:var(--gold);}
 .mc-w .mc-title{color:var(--star);}
 .mc-b .mc-title{color:rgba(200,180,255,0.9);}
-.mc-body{font-size:14px;line-height:1.8;color:rgba(232,228,240,0.65);}
+.mc-body{font-size:15px;line-height:1.85;color:rgba(232,228,240,0.65);}
 .mc-body em{color:#e8e4f0;font-style:italic;}
 
-.form-section{padding:36px 0;}
-.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);padding:30px;border-radius:4px;}
-.slabel{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#b0aac0;margin:26px 0 13px;display:flex;align-items:center;gap:10px;font-family:sans-serif;}
+/* FORM */
+.form-section{padding:48px 0;}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);padding:48px;border-radius:4px;}
+.slabel{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b0aac0;margin:36px 0 18px;display:flex;align-items:center;gap:12px;font-family:sans-serif;}
 .slabel::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.15);}
 .slabel:first-child{margin-top:0}
-.field{margin-bottom:16px;}
-label.fl{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#b0aac0;margin-bottom:7px;font-family:sans-serif;}
-input,select{width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:2px;padding:12px 14px;font-family:'EB Garamond',serif;font-size:15px;color:#e8e4f0;outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none;color-scheme:dark;}
-input:focus,select:focus{border-color:var(--gold);background:rgba(201,168,76,0.08);}
-input::placeholder{color:rgba(232,228,240,0.35);}
-input[type="date"],input[type="time"]{color:#e8e4f0;background:rgba(255,255,255,0.1);}
-input[type="date"]::-webkit-calendar-picker-indicator,input[type="time"]::-webkit-calendar-picker-indicator{
-  cursor:pointer;
-  filter:brightness(0) invert(1);
-  opacity:0.7;
-}
-select option{background:#1a1a2e;color:#e8e4f0;}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
-.fnote{font-size:11px;color:rgba(232,228,240,0.5);margin-top:5px;font-family:sans-serif;}
+.field{margin-bottom:20px;}
+label.fl{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#b0aac0;margin-bottom:8px;font-family:sans-serif;}
+input,select{width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.28);border-radius:3px;padding:14px 16px;font-family:'EB Garamond',serif;font-size:17px;color:#e8e4f0;outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none;color-scheme:dark;}
+input:focus,select:focus{border-color:var(--gold);background:rgba(201,168,76,0.07);}
+input::placeholder{color:rgba(232,228,240,0.38);}
+input[type="date"],input[type="time"]{color:#e8e4f0;}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator{filter:brightness(0) invert(1);opacity:0.75;cursor:pointer;width:20px;height:20px;}
+select option{background:#12131f;color:#e8e4f0;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.fnote{font-size:12px;color:rgba(232,228,240,0.5);margin-top:6px;font-family:sans-serif;}
 .gtoggle{display:grid;grid-template-columns:1fr 1fr;}
 .gtoggle input{display:none;}
-.gtoggle label{padding:12px;text-align:center;border:1px solid rgba(255,255,255,0.2);cursor:pointer;font-size:14px;color:rgba(232,228,240,0.5);transition:all .2s;margin:0;font-family:sans-serif;}
+.gtoggle label{padding:14px;text-align:center;border:1px solid rgba(255,255,255,0.2);cursor:pointer;font-size:16px;color:rgba(232,228,240,0.5);transition:all .2s;margin:0;font-family:sans-serif;}
 .gtoggle label:last-of-type{border-left:none;}
 .gtoggle input:checked+label{background:rgba(201,168,76,0.12);border-color:var(--gold);color:var(--gold);}
 .city-wrap{position:relative;}
-.sugg{position:absolute;top:100%;left:0;right:0;background:#1a1a2e;border:1px solid rgba(255,255,255,0.2);border-top:none;z-index:100;max-height:160px;overflow-y:auto;display:none;border-radius:0 0 2px 2px;}
-.sugg div{padding:10px 14px;font-size:14px;cursor:pointer;color:rgba(232,228,240,0.75);font-family:sans-serif;}
+.sugg{position:absolute;top:100%;left:0;right:0;background:#12131f;border:1px solid rgba(255,255,255,0.2);border-top:none;z-index:100;max-height:200px;overflow-y:auto;display:none;border-radius:0 0 3px 3px;}
+.sugg div{padding:12px 16px;font-size:15px;cursor:pointer;color:rgba(232,228,240,0.75);font-family:sans-serif;}
 .sugg div:hover{background:rgba(201,168,76,0.1);color:#e8e4f0;}
-.submitbtn{width:100%;padding:16px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:5px;cursor:pointer;transition:all .3s;margin-top:12px;border-radius:2px;}
-.submitbtn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold);}
+.submitbtn{width:100%;padding:20px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:6px;cursor:pointer;transition:all .3s;margin-top:16px;border-radius:3px;}
+.submitbtn:hover{background:rgba(201,168,76,0.12);}
 .submitbtn:disabled{opacity:.4;cursor:not-allowed;}
-.errmsg{color:#e57373;font-size:13px;text-align:center;padding:10px;border:1px solid rgba(229,115,115,0.4);margin-top:12px;display:none;border-radius:2px;font-family:sans-serif;}
+.errmsg{color:#e57373;font-size:14px;text-align:center;padding:12px;border:1px solid rgba(229,115,115,0.4);margin-top:14px;display:none;border-radius:3px;font-family:sans-serif;}
 
-#results{display:none;padding-top:36px;}
-.rhead{text-align:center;margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,0.08);}
-.rname{font-family:'Cinzel',serif;font-size:22px;letter-spacing:4px;margin-bottom:6px;}
-.rmeta{font-size:13px;color:#9a94b0;line-height:2;font-family:sans-serif;}
+/* RESULTS */
+#results{display:none;padding-top:48px;}
+.rhead{text-align:center;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.rname{font-family:'Cinzel',serif;font-size:28px;letter-spacing:5px;margin-bottom:8px;}
+.rmeta{font-size:14px;color:#9a94b0;line-height:2;font-family:sans-serif;}
 
-.sec-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#9a94b0;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.sec-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#9a94b0;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
 .sec-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
 .sec-title span{color:var(--gold);}
-.daeun-track{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:6px;}
-.daeun-track::-webkit-scrollbar{height:3px;}
-.daeun-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
-.dblock{min-width:70px;padding:10px 6px;border:1px solid rgba(255,255,255,0.12);border-radius:2px;text-align:center;flex-shrink:0;}
-.dblock.current{border-color:var(--gold);background:rgba(201,168,76,0.1);}
-.dblock.past{opacity:.4;}
-.dage{font-size:9px;color:#9a94b0;letter-spacing:1px;margin-bottom:5px;font-family:sans-serif;}
-.dstem{font-size:18px;color:var(--gold);line-height:1;}
-.dbranch{font-size:18px;color:var(--red);line-height:1;}
-.dyear{font-size:8px;color:rgba(232,228,240,0.3);margin-top:3px;font-family:sans-serif;}
-.current-label{font-size:11px;color:rgba(201,168,76,0.7);text-align:center;letter-spacing:1px;font-family:sans-serif;margin-bottom:28px;}
 
-.panels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
-.panel{border-radius:3px;padding:16px;}
+.daeun-track{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:8px;}
+.daeun-track::-webkit-scrollbar{height:4px;}
+.daeun-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
+.dblock{min-width:88px;padding:14px 8px;border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-align:center;flex-shrink:0;}
+.dblock.current{border-color:var(--gold);background:rgba(201,168,76,0.1);}
+.dblock.past{opacity:.38;}
+.dage{font-size:10px;color:#9a94b0;letter-spacing:1px;margin-bottom:7px;font-family:sans-serif;}
+.dstem{font-size:24px;color:var(--gold);line-height:1;}
+.dbranch{font-size:24px;color:var(--red);line-height:1;}
+.dyear{font-size:9px;color:rgba(232,228,240,0.3);margin-top:5px;font-family:sans-serif;}
+.current-label{font-size:12px;color:rgba(201,168,76,0.7);text-align:center;letter-spacing:1px;font-family:sans-serif;margin-bottom:32px;}
+
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
+.panel{border-radius:3px;padding:20px;}
 .pe{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);}
 .pw{background:rgba(168,196,224,0.05);border:1px solid rgba(168,196,224,0.2);}
-.ptitle{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:sans-serif;}
+.ptitle{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;font-family:sans-serif;}
 .pe .ptitle{color:rgba(201,168,76,0.8);}
 .pw .ptitle{color:rgba(168,196,224,0.8);}
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
-.pillar{text-align:center;padding:8px 3px;border:1px solid rgba(201,168,76,0.15);border-radius:2px;}
-.plab{font-size:9px;color:#9a94b0;text-transform:uppercase;margin-bottom:5px;font-family:sans-serif;letter-spacing:.5px;}
-.pstem{font-size:20px;color:var(--gold);line-height:1;margin-bottom:2px;}
-.pbranch{font-size:20px;color:var(--red);line-height:1;}
-.psub{font-size:9px;color:rgba(232,228,240,0.35);margin-top:4px;font-family:sans-serif;}
-.elrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
-.eltag{font-size:10px;padding:3px 8px;border:1px solid;border-radius:1px;font-family:sans-serif;}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pillar{text-align:center;padding:12px 4px;border:1px solid rgba(201,168,76,0.15);border-radius:2px;}
+.plab{font-size:10px;color:#9a94b0;text-transform:uppercase;margin-bottom:6px;font-family:sans-serif;}
+.pstem{font-size:26px;color:var(--gold);line-height:1;margin-bottom:3px;}
+.pbranch{font-size:26px;color:var(--red);line-height:1;}
+.psub{font-size:10px;color:rgba(232,228,240,0.35);margin-top:6px;font-family:sans-serif;}
+.elrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.eltag{font-size:11px;padding:4px 10px;border:1px solid;border-radius:1px;font-family:sans-serif;}
 .ew{border-color:#4a7c3f;color:#7ab870}.ef{border-color:#c0392b;color:#e57373}.ee{border-color:#b8860b;color:#d4a017}.em{border-color:#9e9e9e;color:#cfcfcf}.ewt{border-color:#1a6b8a;color:#4fc3f7}
-.accnote{font-size:10px;color:rgba(201,168,76,0.45);margin-top:6px;font-family:sans-serif;}
-.plgrid{display:flex;flex-direction:column;gap:4px;}
-.plrow{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid rgba(168,196,224,0.1);font-family:sans-serif;}
-.plname{color:rgba(168,196,224,0.8)}.plsign{color:rgba(232,228,240,0.75)}.pldeg{color:rgba(168,196,224,0.45);font-size:11px;}
+.accnote{font-size:11px;color:rgba(201,168,76,0.45);margin-top:8px;font-family:sans-serif;}
+.plgrid{display:flex;flex-direction:column;gap:5px;}
+.plrow{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(168,196,224,0.1);font-family:sans-serif;}
+.plname{color:rgba(168,196,224,0.8)}.plsign{color:rgba(232,228,240,0.75)}.pldeg{color:rgba(168,196,224,0.45);font-size:12px;}
 
-.rtitle{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#9a94b0;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.rtitle{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#9a94b0;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .rtitle .re{color:rgba(201,168,76,0.8)}.rtitle .rw{color:rgba(168,196,224,0.8)}
 .rtitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
-.rbody{font-size:17px;line-height:2.05;color:rgba(232,228,240,0.9);white-space:pre-wrap;}
+.rbody{font-size:18px;line-height:2.1;color:rgba(232,228,240,0.9);white-space:pre-wrap;}
 .rbody.streaming::after{content:'▌';color:var(--gold);animation:blink .7s step-end infinite;}
-.loading{text-align:center;font-size:13px;color:#9a94b0;letter-spacing:2px;padding:28px 0;animation:pulse 1.5s ease-in-out infinite;font-family:sans-serif;}
-.resetbtn{display:block;margin:44px auto 0;background:transparent;border:none;color:#9a94b0;font-size:13px;letter-spacing:2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-family:sans-serif;}
+.loading{text-align:center;font-size:14px;color:#9a94b0;letter-spacing:2px;padding:32px 0;animation:pulse 1.5s ease-in-out infinite;font-family:sans-serif;}
+.resetbtn{display:block;margin:52px auto 0;background:transparent;border:none;color:#9a94b0;font-size:13px;letter-spacing:2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-family:sans-serif;}
 .resetbtn:hover{color:var(--paper);}
 @keyframes blink{50%{opacity:0}}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
@@ -140,7 +138,7 @@ select option{background:#1a1a2e;color:#e8e4f0;}
     <div class="merit-cards">
       <div class="mcard mc-e">
         <div class="mc-title">Eastern Four Pillars</div>
-        <div class="mc-body">Tells you the <em>when</em>. It maps your life into precise 10-year cycles, showing exactly when fortune opens, when it closes, and what each phase of your life is building toward. Millions across East Asia consult it before every major decision.</div>
+        <div class="mc-body">Tells you the <em>when</em>. Maps your life into precise 10-year cycles, showing exactly when fortune opens, when it closes, and what each phase of your life is building toward. Millions across East Asia consult it before every major decision.</div>
       </div>
       <div class="mcard mc-w">
         <div class="mc-title">Western Astrology</div>
@@ -160,7 +158,7 @@ select option{background:#1a1a2e;color:#e8e4f0;}
         <div class="field"><label class="fl">Full Name</label><input type="text" id="name" placeholder="Your name"></div>
         <div class="field"><label class="fl">Gender</label>
           <div class="gtoggle">
-            <input type="radio" name="gender" id="gf" value="female" checked=""><label for="gf">Female</label>
+            <input type="radio" name="gender" id="gf" value="female" checked><label for="gf">Female</label>
             <input type="radio" name="gender" id="gm" value="male"><label for="gm">Male</label>
           </div>
         </div>
@@ -211,7 +209,7 @@ select option{background:#1a1a2e;color:#e8e4f0;}
       <div class="rname" id="out-name"></div>
       <div class="rmeta" id="out-meta"></div>
     </div>
-    <div class="sec-title" style="margin-bottom:14px"><span>10-Year Fate Cycles</span></div>
+    <div class="sec-title"><span>10-Year Fate Cycles</span></div>
     <div class="daeun-track" id="daeun-track"></div>
     <div class="current-label" id="current-label"></div>
     <div class="panels">
@@ -235,7 +233,6 @@ const EL_C={Wood:'ew',Fire:'ef',Earth:'ee',Metal:'em',Water:'ewt'};
 const ZODIAC=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
 
 const IPCHUN={1900:[2,4],1901:[2,5],1902:[2,4],1903:[2,4],1904:[2,5],1905:[2,4],1906:[2,4],1907:[2,5],1908:[2,5],1909:[2,4],1910:[2,4],1911:[2,5],1912:[2,5],1913:[2,4],1914:[2,4],1915:[2,5],1916:[2,5],1917:[2,4],1918:[2,4],1919:[2,5],1920:[2,5],1921:[2,4],1922:[2,4],1923:[2,5],1924:[2,5],1925:[2,4],1926:[2,4],1927:[2,5],1928:[2,5],1929:[2,4],1930:[2,4],1931:[2,5],1932:[2,5],1933:[2,4],1934:[2,4],1935:[2,5],1936:[2,5],1937:[2,4],1938:[2,4],1939:[2,5],1940:[2,5],1941:[2,4],1942:[2,4],1943:[2,5],1944:[2,5],1945:[2,4],1946:[2,4],1947:[2,5],1948:[2,5],1949:[2,4],1950:[2,4],1951:[2,5],1952:[2,5],1953:[2,4],1954:[2,4],1955:[2,5],1956:[2,5],1957:[2,4],1958:[2,4],1959:[2,5],1960:[2,5],1961:[2,4],1962:[2,4],1963:[2,5],1964:[2,5],1965:[2,4],1966:[2,4],1967:[2,5],1968:[2,5],1969:[2,4],1970:[2,4],1971:[2,5],1972:[2,5],1973:[2,4],1974:[2,4],1975:[2,5],1976:[2,5],1977:[2,4],1978:[2,4],1979:[2,5],1980:[2,5],1981:[2,4],1982:[2,4],1983:[2,5],1984:[2,4],1985:[2,4],1986:[2,4],1987:[2,4],1988:[2,4],1989:[2,4],1990:[2,4],1991:[2,4],1992:[2,4],1993:[2,4],1994:[2,4],1995:[2,4],1996:[2,4],1997:[2,4],1998:[2,4],1999:[2,4],2000:[2,4],2001:[2,4],2002:[2,4],2003:[2,4],2004:[2,4],2005:[2,4],2006:[2,4],2007:[2,4],2008:[2,4],2009:[2,4],2010:[2,4],2011:[2,4],2012:[2,4],2013:[2,4],2014:[2,4],2015:[2,4],2016:[2,4],2017:[2,3],2018:[2,4],2019:[2,4],2020:[2,4],2021:[2,3],2022:[2,4],2023:[2,4],2024:[2,4],2025:[2,3],2026:[2,4],2027:[2,4],2028:[2,4],2029:[2,3],2030:[2,4],2031:[2,4],2032:[2,4],2033:[2,3],2034:[2,4],2035:[2,4],2036:[2,4],2037:[2,3],2038:[2,4],2039:[2,4],2040:[2,4],2041:[2,3],2042:[2,4],2043:[2,4],2044:[2,4],2045:[2,3],2046:[2,4],2047:[2,4],2048:[2,4],2049:[2,3],2050:[2,4]};
-
 const MONTH_TERMS=[[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,7],[9,8],[10,8],[11,7],[12,7],[1,6]];
 const MBRN=[2,3,4,5,6,7,8,9,10,11,0,1];
 
@@ -243,11 +240,9 @@ function jd(y,m,d,h=12){if(m<=2){y--;m+=12;}const A=Math.floor(y/100),B=2-A+Math
 function getDST(y,m,d){const p=[[1948,5,1,1948,9,12],[1949,4,3,1949,9,10],[1950,4,1,1950,9,9],[1951,5,6,1951,9,8],[1955,5,5,1955,9,9],[1956,5,6,1956,9,16],[1957,5,5,1957,9,15],[1958,5,4,1958,9,21],[1959,5,3,1959,9,20],[1960,5,1,1960,9,18],[1987,5,10,1987,10,11],[1988,5,8,1988,10,9]];const n=y*10000+m*100+d;return p.some(([sy,sm,sd,ey,em,ed])=>n>=sy*10000+sm*100+sd&&n<=ey*10000+em*100+ed)?60:0;}
 
 function calcSaju(year,month,day,timeStr,topt,bLon){
-  const notes=[];
-  let hour=12,minute=0;
+  const notes=[];let hour=12,minute=0;
   if(timeStr)[hour,minute]=timeStr.split(':').map(Number);
-  const dst=getDST(year,month,day);
-  if(dst)notes.push(`DST -${dst}min`);
+  const dst=getDST(year,month,day);if(dst)notes.push(`DST -${dst}min`);
   let lonCorr=bLon!=null?Math.round((bLon-135)*4):0;
   if(Math.abs(lonCorr)>=1)notes.push(`Lon ${lonCorr>0?'+':''}${lonCorr}min`);
   let cm=hour*60+minute-dst+lonCorr,cy=year,cmo=month,cd=day;
@@ -258,21 +253,15 @@ function calcSaju(year,month,day,timeStr,topt,bLon){
   if(topt==='jajasi'){const nd=new Date(cy,cmo-1,cd+1);dpy=nd.getFullYear();dpmo=nd.getMonth()+1;dpd=nd.getDate();}
   const ip=IPCHUN[cy]||[2,4];
   const beforeIp=(cmo<ip[0])||(cmo===ip[0]&&cd<ip[1]);
-  let sajuYear=cy;
-  if(beforeIp){sajuYear=cy-1;notes.push('Before solar new year');}
+  let sajuYear=cy;if(beforeIp){sajuYear=cy-1;notes.push('Before solar new year');}
   const yIdx=((sajuYear-4)%60+60)%60;
   const termDates=[];
-  for(let i=0;i<12;i++){
-    let[tm,td]=MONTH_TERMS[i];
-    let ty=cy;if(tm===1)ty=cy+1;
-    termDates.push({jd2:jd(ty,tm,td,12),brIdx:MBRN[i]});
-  }
+  for(let i=0;i<12;i++){let[tm,td]=MONTH_TERMS[i];let ty=cy;if(tm===1)ty=cy+1;termDates.push({jd2:jd(ty,tm,td,12),brIdx:MBRN[i]});}
   termDates.push({jd2:jd(cy-1,12,7,12),brIdx:1});
   termDates.push({jd2:jd(cy+1,2,4,12),brIdx:2});
   termDates.sort((a,b)=>a.jd2-b.jd2);
   const birthJD=jd(cy,cmo,cd,ch+cmin/60);
-  let mBrIdx=2;
-  for(let i=termDates.length-1;i>=0;i--){if(birthJD>=termDates[i].jd2){mBrIdx=termDates[i].brIdx;break;}}
+  let mBrIdx=2;for(let i=termDates.length-1;i>=0;i--){if(birthJD>=termDates[i].jd2){mBrIdx=termDates[i].brIdx;break;}}
   const mStemIdx=((yIdx%5)*2+mBrIdx)%10;
   const dIdx=(Math.floor(jd(dpy,dpmo,dpd,12))+40)%60;
   let hStem=null,hBr=null;
@@ -287,23 +276,10 @@ function calcDaeun(birthYear,gender,mStemIdx,mBrIdx,yIdx,birthJD){
   const yearIsYang=(yIdx%2===0);
   const goForward=(gender==='male'&&yearIsYang)||(gender==='female'&&!yearIsYang);
   let minDiff=Infinity;
-  for(let yr=birthYear-1;yr<=birthYear+1;yr++){
-    for(const[tm,td] of MONTH_TERMS){
-      const ty=tm===1?yr+1:yr;
-      const tjd=jd(ty,tm,td,12);
-      const diff=goForward?(tjd-birthJD):(birthJD-tjd);
-      if(diff>0&&diff<minDiff)minDiff=diff;
-    }
-  }
+  for(let yr=birthYear-1;yr<=birthYear+1;yr++){for(const[tm,td] of MONTH_TERMS){const ty=tm===1?yr+1:yr;const tjd=jd(ty,tm,td,12);const diff=goForward?(tjd-birthJD):(birthJD-tjd);if(diff>0&&diff<minDiff)minDiff=diff;}}
   const startAge=Math.max(1,Math.round(minDiff/3));
   const cycles=[];
-  for(let i=1;i<=8;i++){
-    const offset=goForward?i:-i;
-    const si=((mStemIdx+offset)%10+10)%10;
-    const bi=((mBrIdx+offset)%12+12)%12;
-    const ageStart=startAge+(i-1)*10;
-    cycles.push({stem:STEMS[si],branch:BRANCHES[bi],stemEl:STEM_EL[si],branchEl:BRANCH_EL[bi],ageStart,ageEnd:ageStart+9,yearStart:birthYear+ageStart,yearEnd:birthYear+ageStart+9});
-  }
+  for(let i=1;i<=8;i++){const offset=goForward?i:-i;const si=((mStemIdx+offset)%10+10)%10;const bi=((mBrIdx+offset)%12+12)%12;const ageStart=startAge+(i-1)*10;cycles.push({stem:STEMS[si],branch:BRANCHES[bi],stemEl:STEM_EL[si],branchEl:BRANCH_EL[bi],ageStart,ageEnd:ageStart+9,yearStart:birthYear+ageStart,yearEnd:birthYear+ageStart+9});}
   return{cycles,startAge};
 }
 
@@ -326,8 +302,7 @@ function calcPlanets(year,month,day,hour,lat,lon){
 
 async function geocode(q){try{const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&addressdetails=1`,{headers:{'Accept-Language':'en','User-Agent':'CosmicSaju/1.0'}});const d=await r.json();return d.map(x=>({short:[x.address?.city||x.address?.town||x.address?.county||x.address?.state,x.address?.country].filter(Boolean).join(', '),lat:parseFloat(x.lat),lon:parseFloat(x.lon)}));}catch{return[];}}
 function initCity(inpId,suggId,onPick){
-  const inp=document.getElementById(inpId),box=document.getElementById(suggId);
-  let timer;
+  const inp=document.getElementById(inpId),box=document.getElementById(suggId);let timer;
   inp.addEventListener('input',()=>{clearTimeout(timer);const q=inp.value.trim();if(q.length<2){box.style.display='none';return;}timer=setTimeout(async()=>{const res=await geocode(q);if(!res.length){box.style.display='none';return;}box.innerHTML=res.map((r,i)=>`<div>${r.short}</div>`).join('');box.style.display='block';box.querySelectorAll('div').forEach((el,i)=>el.addEventListener('mousedown',ev=>{ev.preventDefault();inp.value=res[i].short;box.style.display='none';onPick(res[i]);}));},380);});
   inp.addEventListener('blur',()=>setTimeout(()=>{box.style.display='none';},200));
 }
@@ -366,12 +341,7 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   document.getElementById('out-name').textContent=name;
   document.getElementById('out-meta').innerHTML=`<b>${dateV}</b>${timeV?' · '+timeV:' · time unknown'} · Born in <b>${bCityV}</b> · Now in <b>${cCityV}</b> · Age <b>${currentAge}</b>`;
   let currentCycle=null;
-  document.getElementById('daeun-track').innerHTML=cycles.map(c=>{
-    const cur=currentAge>=c.ageStart&&currentAge<=c.ageEnd;
-    const past=currentAge>c.ageEnd;
-    if(cur)currentCycle=c;
-    return`<div class="dblock${cur?' current':''}${past?' past':''}"><div class="dage">${c.ageStart}–${c.ageEnd}</div><div class="dstem">${c.stem}</div><div class="dbranch">${c.branch}</div><div class="dyear">${c.yearStart}–${c.yearEnd}</div></div>`;
-  }).join('');
+  document.getElementById('daeun-track').innerHTML=cycles.map(c=>{const cur=currentAge>=c.ageStart&&currentAge<=c.ageEnd;const past=currentAge>c.ageEnd;if(cur)currentCycle=c;return`<div class="dblock${cur?' current':''}${past?' past':''}"><div class="dage">${c.ageStart}–${c.ageEnd}</div><div class="dstem">${c.stem}</div><div class="dbranch">${c.branch}</div><div class="dyear">${c.yearStart}–${c.yearEnd}</div></div>`;}).join('');
   document.getElementById('current-label').textContent=currentCycle?`▲ You are currently in the ${currentCycle.yearStart}–${currentCycle.yearEnd} cycle, age ${currentAge}`:'';
   document.getElementById('pgrid').innerHTML=pillars.map(p=>`<div class="pillar"><div class="plab">${p.label}</div><div class="pstem">${p.stem}</div><div class="pbranch">${p.branch}</div><div class="psub">${p.stemEl}/${p.branchEl}</div></div>`).join('');
   document.getElementById('elrow').innerHTML=Object.entries(elCounts).filter(([el])=>el!=='?').map(([el,c])=>`<span class="eltag ${EL_C[el]}">${EL_H[el]} ${el}×${c}</span>`).join('');
@@ -383,8 +353,7 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   const elTxt=Object.entries(elCounts).filter(([e])=>e!=='?').map(([e,c])=>`${e}×${c}`).join(' ');
   const daeunTxt=cycles.map(c=>`Ages ${c.ageStart}-${c.ageEnd} (${c.yearStart}-${c.yearEnd}): ${c.stem}${c.branch} ${c.stemEl}/${c.branchEl}`).join('\n');
   const curD=currentCycle?`CURRENT CYCLE (${currentCycle.yearStart}-${currentCycle.yearEnd}): ${currentCycle.stem}${currentCycle.branch} ${currentCycle.stemEl}/${currentCycle.branchEl}`:'';
-  const yr2026Idx=((2026-4)%60+60)%60;
-  const yr2027Idx=((2027-4)%60+60)%60;
+  const yr2026Idx=((2026-4)%60+60)%60;const yr2027Idx=((2027-4)%60+60)%60;
   const yr2026=`${STEMS[yr2026Idx%10]}${BRANCHES[yr2026Idx%12]} ${STEM_EL[yr2026Idx%10]}/${BRANCH_EL[yr2026Idx%12]}`;
   const yr2027=`${STEMS[yr2027Idx%10]}${BRANCHES[yr2027Idx%12]} ${STEM_EL[yr2027Idx%10]}/${BRANCH_EL[yr2027Idx%12]}`;
   const focusMap={general:'what their overall future holds over the next 5-10 years — the major turning points, when fortune shifts, what destiny is building toward',career:'when their career and finances will break through — specific windows, what the next 3 years look like, and when their biggest professional moment arrives',love:'what is coming in their love life — when significant connections arrive, what patterns are ending, and what the next 2-3 years hold romantically',year2026:'exactly what 2026 holds — quarter by quarter where possible, the opportunities, the challenges, and the single most important thing to do this year',year2027:'exactly what 2027 holds — quarter by quarter where possible, the opportunities, the challenges, and the single most important thing to do that year',health:'what their health future looks like — when their energy is high, when to be careful, and what their body needs most right now'};
@@ -422,7 +391,7 @@ Structure (bold headers):
   loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
   try{
     const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1600,stream:true,messages:[{role:'user',content:prompt}]})});
-    if(!res.ok){const e=await res.json();throw new Error(e.error?.message||'Something went wrong');}
+    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||`Error ${res.status}`);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
     while(true){const{done,value}=await reader.read();if(done)break;for(const line of dec.decode(value).split('\n')){if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta?.text)textEl.textContent+=j.delta.text;}catch{}}}
@@ -433,6 +402,5 @@ Structure (bold headers):
 });
 document.getElementById('resetbtn').addEventListener('click',()=>{document.getElementById('results').style.display='none';document.getElementById('form-area').style.display='block';});
 </script>
-
-
-</body></html>
+</body>
+</html>
