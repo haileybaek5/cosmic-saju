@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmic Saju</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#07080f;--paper:#e8e4f0;--gold:#c9a84c;--red:#c0392b;--star:#a8c4e0;--muted:#6b6680;}
+body{background:var(--ink);color:var(--paper);font-family:'EB Garamond',serif;min-height:100vh;padding:0 0 60px;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(201,168,76,0.05) 0%,transparent 50%),radial-gradient(ellipse at 85% 20%,rgba(124,111,160,0.07) 0%,transparent 50%);pointer-events:none;z-index:0;}
+.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 20px;}
+
+.hero{text-align:center;padding:48px 20px 40px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,76,0.15);padding:5px 16px;margin-bottom:16px;border-radius:2px;}
+.be{font-size:10px;letter-spacing:2px;color:var(--gold);opacity:.8;font-family:sans-serif;}
+.bsep{width:1px;height:12px;background:rgba(255,255,255,0.1);}
+.bw{font-size:10px;letter-spacing:2px;color:var(--star);opacity:.8;font-family:sans-serif;}
+h1{font-family:'Cinzel',serif;font-size:34px;font-weight:600;letter-spacing:7px;background:linear-gradient(135deg,var(--gold) 0%,var(--paper) 50%,var(--star) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+.sub{font-size:12px;color:var(--muted);letter-spacing:3px;font-family:sans-serif;margin-bottom:24px;}
+.dualline{display:flex;align-items:center;justify-content:center;gap:16px;font-size:11px;letter-spacing:1.5px;font-family:sans-serif;}
+.de{color:rgba(201,168,76,0.5)}.dw{color:rgba(168,196,224,0.5)}.dx{color:rgba(255,255,255,0.1)}
+
+.merit{padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.merit p{font-size:16px;line-height:1.95;color:rgba(232,228,240,0.65);margin-bottom:18px;}
+.merit p:last-child{margin-bottom:0;}
+.merit em{color:rgba(232,228,240,0.88);font-style:normal;}
+.merit-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0;}
+.mcard{padding:22px 20px;border-radius:3px;font-family:sans-serif;}
+.mc-e{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.12);}
+.mc-w{background:rgba(168,196,224,0.04);border:1px solid rgba(168,196,224,0.12);}
+.mc-b{background:rgba(147,112,219,0.04);border:1px solid rgba(147,112,219,0.12);grid-column:1/-1;}
+.mc-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.mc-e .mc-title{color:rgba(201,168,76,0.7);}
+.mc-w .mc-title{color:rgba(168,196,224,0.7);}
+.mc-b .mc-title{color:rgba(180,160,255,0.7);}
+.mc-body{font-size:13px;line-height:1.8;color:rgba(232,228,240,0.45);}
+
+.form-section{padding:36px 0;}
+.card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);padding:30px;border-radius:4px;}
+.slabel{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin:26px 0 13px;display:flex;align-items:center;gap:10px;font-family:sans-serif;}
+.slabel::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.06);}
+.slabel:first-child{margin-top:0}
+.field{margin-bottom:14px;}
+label.fl{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-family:sans-serif;}
+input,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:2px;padding:10px 13px;font-family:'EB Garamond',serif;font-size:14px;color:var(--paper);outline:none;transition:border-color .2s;-webkit-appearance:none;}
+input:focus,select:focus{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.04);}
+input::placeholder{color:rgba(232,228,240,0.18);}
+select option{background:#12131f;color:var(--paper);}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.fnote{font-size:10px;color:rgba(232,228,240,0.25);margin-top:4px;font-family:sans-serif;}
+.gtoggle{display:grid;grid-template-columns:1fr 1fr;}
+.gtoggle input{display:none;}
+.gtoggle label{padding:10px;text-align:center;border:1px solid rgba(255,255,255,0.09);cursor:pointer;font-size:13px;color:rgba(232,228,240,0.3);transition:all .2s;margin:0;font-family:sans-serif;}
+.gtoggle label:last-of-type{border-left:none;}
+.gtoggle input:checked+label{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4);color:var(--gold);}
+.city-wrap{position:relative;}
+.sugg{position:absolute;top:100%;left:0;right:0;background:#12131f;border:1px solid rgba(255,255,255,0.1);border-top:none;z-index:100;max-height:160px;overflow-y:auto;display:none;border-radius:0 0 2px 2px;}
+.sugg div{padding:8px 13px;font-size:13px;cursor:pointer;color:rgba(232,228,240,0.6);font-family:sans-serif;}
+.sugg div:hover{background:rgba(201,168,76,0.08);color:var(--paper);}
+.submitbtn{width:100%;padding:15px;background:transparent;border:1px solid rgba(201,168,76,0.5);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;cursor:pointer;transition:all .3s;margin-top:10px;border-radius:2px;}
+.submitbtn:hover{background:rgba(201,168,76,0.1);border-color:var(--gold);}
+.submitbtn:disabled{opacity:.4;cursor:not-allowed;}
+.errmsg{color:#e57373;font-size:12px;text-align:center;padding:10px;border:1px solid rgba(229,115,115,0.3);margin-top:12px;display:none;border-radius:2px;font-family:sans-serif;}
+
+#results{display:none;padding-top:36px;}
+.rhead{text-align:center;margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.rname{font-family:'Cinzel',serif;font-size:22px;letter-spacing:4px;margin-bottom:6px;}
+.rmeta{font-size:12px;color:var(--muted);line-height:2;font-family:sans-serif;}
+
+.sec-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.sec-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.06);}
+.sec-title span{color:var(--gold);}
+.daeun-track{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:6px;}
+.daeun-track::-webkit-scrollbar{height:3px;}
+.daeun-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.2);border-radius:2px;}
+.dblock{min-width:70px;padding:10px 6px;border:1px solid rgba(255,255,255,0.07);border-radius:2px;text-align:center;flex-shrink:0;}
+.dblock.current{border-color:var(--gold);background:rgba(201,168,76,0.08);}
+.dblock.past{opacity:.35;}
+.dage{font-size:8px;color:var(--muted);letter-spacing:1px;margin-bottom:5px;font-family:sans-serif;}
+.dstem{font-size:18px;color:var(--gold);line-height:1;}
+.dbranch{font-size:18px;color:var(--red);line-height:1;}
+.dyear{font-size:8px;color:rgba(232,228,240,0.18);margin-top:3px;font-family:sans-serif;}
+.current-label{font-size:10px;color:rgba(201,168,76,0.5);text-align:center;letter-spacing:1px;font-family:sans-serif;margin-bottom:28px;}
+
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.panel{border-radius:3px;padding:16px;}
+.pe{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.15);}
+.pw{background:rgba(168,196,224,0.04);border:1px solid rgba(168,196,224,0.15);}
+.ptitle{font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:sans-serif;}
+.pe .ptitle{color:rgba(201,168,76,0.6);}
+.pw .ptitle{color:rgba(168,196,224,0.6);}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.pillar{text-align:center;padding:8px 3px;border:1px solid rgba(201,168,76,0.1);border-radius:2px;}
+.plab{font-size:8px;color:var(--muted);text-transform:uppercase;margin-bottom:5px;font-family:sans-serif;letter-spacing:.5px;}
+.pstem{font-size:20px;color:var(--gold);line-height:1;margin-bottom:2px;}
+.pbranch{font-size:20px;color:var(--red);line-height:1;}
+.psub{font-size:8px;color:rgba(232,228,240,0.18);margin-top:4px;font-family:sans-serif;}
+.elrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.eltag{font-size:9px;padding:2px 7px;border:1px solid;border-radius:1px;opacity:.65;font-family:sans-serif;}
+.ew{border-color:#4a7c3f;color:#7ab870}.ef{border-color:#c0392b;color:#e57373}.ee{border-color:#b8860b;color:#d4a017}.em{border-color:#9e9e9e;color:#cfcfcf}.ewt{border-color:#1a6b8a;color:#4fc3f7}
+.accnote{font-size:9px;color:rgba(201,168,76,0.25);margin-top:6px;font-family:sans-serif;}
+.plgrid{display:flex;flex-direction:column;gap:3px;}
+.plrow{display:flex;align-items:center;justify-content:space-between;font-size:11px;padding:3px 0;border-bottom:1px solid rgba(168,196,224,0.06);font-family:sans-serif;}
+.plname{color:rgba(168,196,224,0.55)}.plsign{color:rgba(232,228,240,0.5)}.pldeg{color:rgba(168,196,224,0.25);font-size:10px;}
+
+.rtitle{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.rtitle .re{color:rgba(201,168,76,0.6)}.rtitle .rw{color:rgba(168,196,224,0.6)}
+.rtitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.06);}
+.rbody{font-size:16px;line-height:2.05;color:rgba(232,228,240,0.85);white-space:pre-wrap;}
+.rbody.streaming::after{content:'▌';color:var(--gold);animation:blink .7s step-end infinite;}
+.loading{text-align:center;font-size:12px;color:var(--muted);letter-spacing:2px;padding:28px 0;animation:pulse 1.5s ease-in-out infinite;font-family:sans-serif;}
+.resetbtn{display:block;margin:44px auto 0;background:transparent;border:none;color:var(--muted);font-size:12px;letter-spacing:2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-family:sans-serif;}
+.resetbtn:hover{color:var(--paper);}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge"><span class="be">FOUR PILLARS</span><span class="bsep"></span><span class="bw">WESTERN ASTROLOGY ✦</span></div>
+    <h1>COSMIC SAJU</h1>
+    <p class="sub">Where Eastern fate meets Western stars</p>
+    <div class="dualline"><span class="de">Year · Month · Day · Hour</span><span class="dx">×</span><span class="dw">☉ ☽ ♂ ♃ ♄</span></div>
+  </div>
+
+  <div class="merit">
+    <p>Cosmic Saju combines two ancient systems that have independently predicted human fate for thousands of years — Eastern Four Pillars and Western astrology — into a single reading.</p>
+    <div class="merit-cards">
+      <div class="mcard mc-e">
+        <div class="mc-title">Eastern Four Pillars</div>
+        <div class="mc-body">Maps your life into precise 10-year cycles, showing exactly when fortune opens, when it closes, and what each phase of your life is building toward. Millions across East Asia consult it before every major decision.</div>
+      </div>
+      <div class="mcard mc-w">
+        <div class="mc-title">Western Astrology</div>
+        <div class="mc-body">The positions of the planets at the moment you were born reveal your drives and patterns. Through their ongoing movement, they pinpoint the specific opportunities and challenges arriving in your life right now.</div>
+      </div>
+      <div class="mcard mc-b">
+        <div class="mc-title">Why Both Together</div>
+        <div class="mc-body">When both systems point to the same year as a turning point, you can trust it. When one is vague, the other is specific. The result is a reading that tells you what is actually coming and when.</div>
+      </div>
+    </div>
+    <p>Enter your birth details. The reading tells you what's ahead — specific periods, specific timing, specific guidance.</p>
+  </div>
+
+  <div class="form-section" id="form-area">
+    <div class="card">
+      <div class="slabel">About You</div>
+      <div class="row2">
+        <div class="field"><label class="fl">Full Name</label><input type="text" id="name" placeholder="Your name"></div>
+        <div class="field"><label class="fl">Gender</label>
+          <div class="gtoggle">
+            <input type="radio" name="gender" id="gf" value="female" checked><label for="gf">Female</label>
+            <input type="radio" name="gender" id="gm" value="male"><label for="gm">Male</label>
+          </div>
+        </div>
+      </div>
+      <div class="slabel">Birth Details</div>
+      <div class="row3">
+        <div class="field"><label class="fl">Calendar</label>
+          <select id="cal"><option value="solar">Solar (Gregorian)</option><option value="lunar">Lunar</option></select>
+        </div>
+        <div class="field"><label class="fl">Birth Date</label><input type="date" id="bdate"></div>
+        <div class="field"><label class="fl">Birth Time</label><input type="time" id="btime" step="60"></div>
+      </div>
+      <div class="field"><label class="fl">Birth Time Note</label>
+        <select id="topt">
+          <option value="known">I know my exact birth time</option>
+          <option value="jojasi">Born between 11pm and midnight</option>
+          <option value="jajasi">Born between midnight and 1am</option>
+          <option value="unknown">I don't know my birth time</option>
+        </select>
+      </div>
+      <div class="field"><label class="fl">Birth City</label>
+        <div class="city-wrap"><input type="text" id="bcity" placeholder="City you were born in..." autocomplete="off"><div class="sugg" id="bsugg"></div></div>
+        <p class="fnote">Used for precise time correction based on your exact birth location</p>
+      </div>
+      <div class="slabel">Where You Are Now</div>
+      <div class="field"><label class="fl">Current City</label>
+        <div class="city-wrap"><input type="text" id="ccity" placeholder="Where you live now..." autocomplete="off"><div class="sugg" id="csugg"></div></div>
+        <p class="fnote">Used to read your chart relative to where you are today</p>
+      </div>
+      <div class="slabel">Your Reading</div>
+      <div class="field"><label class="fl">What Do You Want to Know?</label>
+        <select id="focus">
+          <option value="general">What does my future hold — full reading</option>
+          <option value="career">When will my career or finances break through</option>
+          <option value="love">What's coming in my love life</option>
+          <option value="year2026">What exactly is coming for me in 2026</option>
+          <option value="year2027">What exactly is coming for me in 2027</option>
+          <option value="health">What does my health future look like</option>
+        </select>
+      </div>
+      <button class="submitbtn" id="submitbtn">READ MY FUTURE</button>
+      <div class="errmsg" id="errmsg"></div>
+    </div>
+  </div>
+
+  <div id="results">
+    <div class="rhead">
+      <div class="rname" id="out-name"></div>
+      <div class="rmeta" id="out-meta"></div>
+    </div>
+    <div class="sec-title" style="margin-bottom:14px"><span>10-Year Fate Cycles</span></div>
+    <div class="daeun-track" id="daeun-track"></div>
+    <div class="current-label" id="current-label"></div>
+    <div class="panels">
+      <div class="panel pe"><div class="ptitle">Four Pillars</div><div class="pillars" id="pgrid"></div><div class="elrow" id="elrow"></div><div class="accnote" id="accnote"></div></div>
+      <div class="panel pw"><div class="ptitle">✦ Planets at Birth</div><div class="plgrid" id="plgrid"></div></div>
+    </div>
+    <div class="rtitle"><span class="re">Four Pillars</span><span>×</span><span class="rw">Astrology</span> · Your Future</div>
+    <div class="loading" id="loading">Reading your fate · · ·</div>
+    <div class="rbody" id="rtext"></div>
+    <button class="resetbtn" id="resetbtn">← Start over</button>
+  </div>
+</div>
+
+<script>
+const STEMS=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
+const BRANCHES=['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+const STEM_EL=['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water'];
+const BRANCH_EL=['Water','Earth','Wood','Wood','Earth','Fire','Fire','Earth','Metal','Metal','Earth','Water'];
+const EL_H={Wood:'木',Fire:'火',Earth:'土',Metal:'金',Water:'水'};
+const EL_C={Wood:'ew',Fire:'ef',Earth:'ee',Metal:'em',Water:'ewt'};
+const ZODIAC=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+
+const IPCHUN={1900:[2,4],1901:[2,5],1902:[2,4],1903:[2,4],1904:[2,5],1905:[2,4],1906:[2,4],1907:[2,5],1908:[2,5],1909:[2,4],1910:[2,4],1911:[2,5],1912:[2,5],1913:[2,4],1914:[2,4],1915:[2,5],1916:[2,5],1917:[2,4],1918:[2,4],1919:[2,5],1920:[2,5],1921:[2,4],1922:[2,4],1923:[2,5],1924:[2,5],1925:[2,4],1926:[2,4],1927:[2,5],1928:[2,5],1929:[2,4],1930:[2,4],1931:[2,5],1932:[2,5],1933:[2,4],1934:[2,4],1935:[2,5],1936:[2,5],1937:[2,4],1938:[2,4],1939:[2,5],1940:[2,5],1941:[2,4],1942:[2,4],1943:[2,5],1944:[2,5],1945:[2,4],1946:[2,4],1947:[2,5],1948:[2,5],1949:[2,4],1950:[2,4],1951:[2,5],1952:[2,5],1953:[2,4],1954:[2,4],1955:[2,5],1956:[2,5],1957:[2,4],1958:[2,4],1959:[2,5],1960:[2,5],1961:[2,4],1962:[2,4],1963:[2,5],1964:[2,5],1965:[2,4],1966:[2,4],1967:[2,5],1968:[2,5],1969:[2,4],1970:[2,4],1971:[2,5],1972:[2,5],1973:[2,4],1974:[2,4],1975:[2,5],1976:[2,5],1977:[2,4],1978:[2,4],1979:[2,5],1980:[2,5],1981:[2,4],1982:[2,4],1983:[2,5],1984:[2,4],1985:[2,4],1986:[2,4],1987:[2,4],1988:[2,4],1989:[2,4],1990:[2,4],1991:[2,4],1992:[2,4],1993:[2,4],1994:[2,4],1995:[2,4],1996:[2,4],1997:[2,4],1998:[2,4],1999:[2,4],2000:[2,4],2001:[2,4],2002:[2,4],2003:[2,4],2004:[2,4],2005:[2,4],2006:[2,4],2007:[2,4],2008:[2,4],2009:[2,4],2010:[2,4],2011:[2,4],2012:[2,4],2013:[2,4],2014:[2,4],2015:[2,4],2016:[2,4],2017:[2,3],2018:[2,4],2019:[2,4],2020:[2,4],2021:[2,3],2022:[2,4],2023:[2,4],2024:[2,4],2025:[2,3],2026:[2,4],2027:[2,4],2028:[2,4],2029:[2,3],2030:[2,4],2031:[2,4],2032:[2,4],2033:[2,3],2034:[2,4],2035:[2,4],2036:[2,4],2037:[2,3],2038:[2,4],2039:[2,4],2040:[2,4],2041:[2,3],2042:[2,4],2043:[2,4],2044:[2,4],2045:[2,3],2046:[2,4],2047:[2,4],2048:[2,4],2049:[2,3],2050:[2,4]};
+
+const MONTH_TERMS=[[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,7],[9,8],[10,8],[11,7],[12,7],[1,6]];
+const MBRN=[2,3,4,5,6,7,8,9,10,11,0,1];
+
+function jd(y,m,d,h=12){if(m<=2){y--;m+=12;}const A=Math.floor(y/100),B=2-A+Math.floor(A/4);return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5+h/24;}
+function getDST(y,m,d){const p=[[1948,5,1,1948,9,12],[1949,4,3,1949,9,10],[1950,4,1,1950,9,9],[1951,5,6,1951,9,8],[1955,5,5,1955,9,9],[1956,5,6,1956,9,16],[1957,5,5,1957,9,15],[1958,5,4,1958,9,21],[1959,5,3,1959,9,20],[1960,5,1,1960,9,18],[1987,5,10,1987,10,11],[1988,5,8,1988,10,9]];const n=y*10000+m*100+d;return p.some(([sy,sm,sd,ey,em,ed])=>n>=sy*10000+sm*100+sd&&n<=ey*10000+em*100+ed)?60:0;}
+
+function calcSaju(year,month,day,timeStr,topt,bLon){
+  const notes=[];
+  let hour=12,minute=0;
+  if(timeStr)[hour,minute]=timeStr.split(':').map(Number);
+  const dst=getDST(year,month,day);
+  if(dst)notes.push(`DST -${dst}min`);
+  let lonCorr=bLon!=null?Math.round((bLon-135)*4):0;
+  if(Math.abs(lonCorr)>=1)notes.push(`Lon ${lonCorr>0?'+':''}${lonCorr}min`);
+  let cm=hour*60+minute-dst+lonCorr,cy=year,cmo=month,cd=day;
+  while(cm<0){cm+=1440;cd--;if(cd<1){cmo--;if(cmo<1){cmo=12;cy--;}cd=new Date(cy,cmo,0).getDate();}}
+  while(cm>=1440){cm-=1440;cd++;const mx=new Date(cy,cmo,0).getDate();if(cd>mx){cd=1;cmo++;if(cmo>12){cmo=1;cy++;}}}
+  const ch=Math.floor(cm/60),cmin=cm%60;
+  let dpy=cy,dpmo=cmo,dpd=cd;
+  if(topt==='jajasi'){const nd=new Date(cy,cmo-1,cd+1);dpy=nd.getFullYear();dpmo=nd.getMonth()+1;dpd=nd.getDate();}
+  const ip=IPCHUN[cy]||[2,4];
+  const beforeIp=(cmo<ip[0])||(cmo===ip[0]&&cd<ip[1]);
+  let sajuYear=cy;
+  if(beforeIp){sajuYear=cy-1;notes.push('Before solar new year');}
+  const yIdx=((sajuYear-4)%60+60)%60;
+  const termDates=[];
+  for(let i=0;i<12;i++){
+    let[tm,td]=MONTH_TERMS[i];
+    let ty=cy;if(tm===1)ty=cy+1;
+    termDates.push({jd2:jd(ty,tm,td,12),brIdx:MBRN[i]});
+  }
+  termDates.push({jd2:jd(cy-1,12,7,12),brIdx:1});
+  termDates.push({jd2:jd(cy+1,2,4,12),brIdx:2});
+  termDates.sort((a,b)=>a.jd2-b.jd2);
+  const birthJD=jd(cy,cmo,cd,ch+cmin/60);
+  let mBrIdx=2;
+  for(let i=termDates.length-1;i>=0;i--){if(birthJD>=termDates[i].jd2){mBrIdx=termDates[i].brIdx;break;}}
+  const mStemIdx=((yIdx%5)*2+mBrIdx)%10;
+  const dIdx=(Math.floor(jd(dpy,dpmo,dpd,12))+40)%60;
+  let hStem=null,hBr=null;
+  if(timeStr&&topt!=='unknown'){const tot=ch*60+cmin;hBr=(tot>=23*60||tot<60)?0:Math.floor((tot-60)/120)+1;hStem=((dIdx%5)*2+hBr)%10;}
+  const mk=(s,b,lbl)=>({label:lbl,stem:s!=null?STEMS[s%10]:'?',branch:b!=null?BRANCHES[b%12]:'?',stemEl:s!=null?STEM_EL[s%10]:'?',branchEl:b!=null?BRANCH_EL[b%12]:'?'});
+  return{pillars:[mk(yIdx%10,yIdx%12,'Year'),mk(mStemIdx,mBrIdx,'Month'),mk(dIdx%10,dIdx%12,'Day'),mk(hStem,hBr,'Hour')],notes,corrTime:timeStr?`${String(ch).padStart(2,'0')}:${String(cmin).padStart(2,'0')}`:null,mStemIdx,mBrIdx,yIdx,dIdx,birthJD};
+}
+
+function countEl(p){const c={};p.forEach(x=>{if(x.stemEl&&x.stemEl!=='?')c[x.stemEl]=(c[x.stemEl]||0)+1;if(x.branchEl&&x.branchEl!=='?')c[x.branchEl]=(c[x.branchEl]||0)+1;});return c;}
+
+function calcDaeun(birthYear,gender,mStemIdx,mBrIdx,yIdx,birthJD){
+  const yearIsYang=(yIdx%2===0);
+  const goForward=(gender==='male'&&yearIsYang)||(gender==='female'&&!yearIsYang);
+  let minDiff=Infinity;
+  for(let yr=birthYear-1;yr<=birthYear+1;yr++){
+    for(const[tm,td] of MONTH_TERMS){
+      const ty=tm===1?yr+1:yr;
+      const tjd=jd(ty,tm,td,12);
+      const diff=goForward?(tjd-birthJD):(birthJD-tjd);
+      if(diff>0&&diff<minDiff)minDiff=diff;
+    }
+  }
+  const startAge=Math.max(1,Math.round(minDiff/3));
+  const cycles=[];
+  for(let i=1;i<=8;i++){
+    const offset=goForward?i:-i;
+    const si=((mStemIdx+offset)%10+10)%10;
+    const bi=((mBrIdx+offset)%12+12)%12;
+    const ageStart=startAge+(i-1)*10;
+    cycles.push({stem:STEMS[si],branch:BRANCHES[bi],stemEl:STEM_EL[si],branchEl:BRANCH_EL[bi],ageStart,ageEnd:ageStart+9,yearStart:birthYear+ageStart,yearEnd:birthYear+ageStart+9});
+  }
+  return{cycles,startAge};
+}
+
+function calcPlanets(year,month,day,hour,lat,lon){
+  const jd2=jd(year,month,day,hour),T=(jd2-2451545)/36525,D=jd2-2451545;
+  const pl=(L0c,L0r,Mc,Mr,Cc)=>((L0c+L0r*T)%360+Cc*Math.sin(((Mc+Mr*T)%360)*Math.PI/180)+360)%360;
+  const sL=pl(280.467,36000.770,357.529,35999.050,1.915);
+  const mL=((218.316+13.176396*D+6.289*Math.sin((134.963+13.064993*D)*Math.PI/180))%360+360)%360;
+  const meL=pl(252.251,149472.675,174.795,149472.515,23.44);
+  const vL=pl(181.979,58517.816,50.416,58517.803,0.772);
+  const maL=pl(355.433,19140.299,19.373,19140.296,10.691);
+  const jL=pl(34.351,3034.906,20.020,3034.906,5.550);
+  const saL=pl(50.077,1222.114,317.021,1222.114,6.390);
+  const lstDeg=((100.4606+36000.7701*T+(lon||127.5)/15+hour)*15)%360;
+  const Er=23.439*Math.PI/180,latr=(lat||37.5)*Math.PI/180,RAMC=lstDeg*Math.PI/180;
+  const asc=(Math.atan2(Math.cos(RAMC),-(Math.sin(RAMC)*Math.cos(Er)+Math.tan(latr)*Math.sin(Er)))*180/Math.PI+360)%360;
+  const sg=l=>Math.floor(((l%360)+360)%360/30);
+  return[{sym:'☉',name:'Sun',lon:sL,sign:sg(sL)},{sym:'☽',name:'Moon',lon:mL,sign:sg(mL)},{sym:'☿',name:'Mercury',lon:meL,sign:sg(meL)},{sym:'♀',name:'Venus',lon:vL,sign:sg(vL)},{sym:'♂',name:'Mars',lon:maL,sign:sg(maL)},{sym:'♃',name:'Jupiter',lon:jL,sign:sg(jL)},{sym:'♄',name:'Saturn',lon:saL,sign:sg(saL)},{sym:'↑',name:'Asc',lon:asc,sign:sg(asc)}];
+}
+
+async function geocode(q){try{const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&addressdetails=1`,{headers:{'Accept-Language':'en','User-Agent':'CosmicSaju/1.0'}});const d=await r.json();return d.map(x=>({short:[x.address?.city||x.address?.town||x.address?.county||x.address?.state,x.address?.country].filter(Boolean).join(', '),lat:parseFloat(x.lat),lon:parseFloat(x.lon)}));}catch{return[];}}
+function initCity(inpId,suggId,onPick){
+  const inp=document.getElementById(inpId),box=document.getElementById(suggId);
+  let timer;
+  inp.addEventListener('input',()=>{clearTimeout(timer);const q=inp.value.trim();if(q.length<2){box.style.display='none';return;}timer=setTimeout(async()=>{const res=await geocode(q);if(!res.length){box.style.display='none';return;}box.innerHTML=res.map((r,i)=>`<div>${r.short}</div>`).join('');box.style.display='block';box.querySelectorAll('div').forEach((el,i)=>el.addEventListener('mousedown',ev=>{ev.preventDefault();inp.value=res[i].short;box.style.display='none';onPick(res[i]);}));},380);});
+  inp.addEventListener('blur',()=>setTimeout(()=>{box.style.display='none';},200));
+}
+let bCity=null,cCity=null;
+initCity('bcity','bsugg',d=>{bCity=d;});
+initCity('ccity','csugg',d=>{cCity=d;});
+
+document.getElementById('submitbtn').addEventListener('click',async()=>{
+  const name=document.getElementById('name').value.trim();
+  const gender=document.querySelector('input[name="gender"]:checked').value;
+  const dateV=document.getElementById('bdate').value;
+  const timeV=document.getElementById('btime').value;
+  const topt=document.getElementById('topt').value;
+  const bCityV=document.getElementById('bcity').value.trim();
+  const cCityV=document.getElementById('ccity').value.trim();
+  const focus=document.getElementById('focus').value;
+  const errEl=document.getElementById('errmsg');
+  if(!name||!dateV||!bCityV||!cCityV){errEl.textContent='Please fill in your name, date, and both cities.';errEl.style.display='block';return;}
+  errEl.style.display='none';
+  document.getElementById('submitbtn').disabled=true;
+  document.getElementById('submitbtn').textContent='CALCULATING...';
+  if(!bCity){const r=await geocode(bCityV);if(r.length)bCity=r[0];}
+  if(!cCity){const r=await geocode(cCityV);if(r.length)cCity=r[0];}
+  const[year,month,day]=dateV.split('-').map(Number);
+  const hour=timeV?parseInt(timeV.split(':')[0]):12;
+  const{pillars,notes,corrTime,mStemIdx,mBrIdx,yIdx,dIdx,birthJD}=calcSaju(year,month,day,timeV||null,topt,bCity?.lon??null);
+  const elCounts=countEl(pillars);
+  const planets=calcPlanets(year,month,day,hour,bCity?.lat,bCity?.lon);
+  const{cycles,startAge}=calcDaeun(year,gender,mStemIdx,mBrIdx,yIdx,birthJD);
+  const NOW_YEAR=new Date().getFullYear();
+  const currentAge=NOW_YEAR-year;
+  document.getElementById('form-area').style.display='none';
+  document.getElementById('results').style.display='block';
+  document.getElementById('out-name').textContent=name;
+  document.getElementById('out-meta').innerHTML=`<b>${dateV}</b>${timeV?' · '+timeV:' · time unknown'} · Born in <b>${bCityV}</b> · Now in <b>${cCityV}</b> · Age <b>${currentAge}</b>`;
+  let currentCycle=null;
+  document.getElementById('daeun-track').innerHTML=cycles.map(c=>{
+    const cur=currentAge>=c.ageStart&&currentAge<=c.ageEnd;
+    const past=currentAge>c.ageEnd;
+    if(cur)currentCycle=c;
+    return`<div class="dblock${cur?' current':''}${past?' past':''}"><div class="dage">${c.ageStart}–${c.ageEnd}</div><div class="dstem">${c.stem}</div><div class="dbranch">${c.branch}</div><div class="dyear">${c.yearStart}–${c.yearEnd}</div></div>`;
+  }).join('');
+  document.getElementById('current-label').textContent=currentCycle?`▲ You are currently in the ${currentCycle.yearStart}–${currentCycle.yearEnd} cycle, age ${currentAge}`:'';
+  document.getElementById('pgrid').innerHTML=pillars.map(p=>`<div class="pillar"><div class="plab">${p.label}</div><div class="pstem">${p.stem}</div><div class="pbranch">${p.branch}</div><div class="psub">${p.stemEl}/${p.branchEl}</div></div>`).join('');
+  document.getElementById('elrow').innerHTML=Object.entries(elCounts).filter(([el])=>el!=='?').map(([el,c])=>`<span class="eltag ${EL_C[el]}">${EL_H[el]} ${el}×${c}</span>`).join('');
+  document.getElementById('accnote').textContent=[corrTime?'Corrected: '+corrTime:'',...notes].filter(Boolean).join(' · ');
+  document.getElementById('plgrid').innerHTML=planets.map(p=>`<div class="plrow"><span class="plname">${p.sym} ${p.name}</span><span class="plsign">${ZODIAC[p.sign]}</span><span class="pldeg">${(p.lon%30).toFixed(1)}°</span></div>`).join('');
+
+  const pillarTxt=pillars.map(p=>`${p.label}: ${p.stem}${p.branch} (${p.stemEl}/${p.branchEl})`).join(', ');
+  const planetTxt=planets.map(p=>`${p.sym}${p.name}: ${ZODIAC[p.sign]} ${(p.lon%30).toFixed(1)}°`).join(', ');
+  const elTxt=Object.entries(elCounts).filter(([e])=>e!=='?').map(([e,c])=>`${e}×${c}`).join(' ');
+  const daeunTxt=cycles.map(c=>`Ages ${c.ageStart}-${c.ageEnd} (${c.yearStart}-${c.yearEnd}): ${c.stem}${c.branch} ${c.stemEl}/${c.branchEl}`).join('\n');
+  const curD=currentCycle?`CURRENT CYCLE (${currentCycle.yearStart}-${currentCycle.yearEnd}): ${currentCycle.stem}${currentCycle.branch} ${currentCycle.stemEl}/${currentCycle.branchEl}`:'';
+  const yr2026Idx=((2026-4)%60+60)%60;
+  const yr2027Idx=((2027-4)%60+60)%60;
+  const yr2026=`${STEMS[yr2026Idx%10]}${BRANCHES[yr2026Idx%12]} ${STEM_EL[yr2026Idx%10]}/${BRANCH_EL[yr2026Idx%12]}`;
+  const yr2027=`${STEMS[yr2027Idx%10]}${BRANCHES[yr2027Idx%12]} ${STEM_EL[yr2027Idx%10]}/${BRANCH_EL[yr2027Idx%12]}`;
+  const focusMap={general:'what their overall future holds over the next 5-10 years — the major turning points, when fortune shifts, what destiny is building toward',career:'when their career and finances will break through — specific windows, what the next 3 years look like, and when their biggest professional moment arrives',love:'what is coming in their love life — when significant connections arrive, what patterns are ending, and what the next 2-3 years hold romantically',year2026:'exactly what 2026 holds — quarter by quarter where possible, the opportunities, the challenges, and the single most important thing to do this year',year2027:'exactly what 2027 holds — quarter by quarter where possible, the opportunities, the challenges, and the single most important thing to do that year',health:'what their health future looks like — when their energy is high, when to be careful, and what their body needs most right now'};
+
+  const prompt=`You are the world's most accurate fate reader, combining Eastern Four Pillars destiny cycles with Western astrology planetary timing. Your only job is to tell ${name} what is going to happen — specific predictions, specific timing.
+
+ASTROLOGICAL DATA (use to understand their fate — NEVER mention symbols, element names, planet names, sign names, or any technical terms in the reading):
+Four Pillars: ${pillarTxt}
+Element balance: ${elTxt}
+Day Master: ${pillars[2].stem} ${pillars[2].stemEl}
+Western planets at birth: ${planetTxt}
+10-YEAR FATE CYCLES:
+${daeunTxt}
+${curD}
+This year 2026 energy: ${yr2026}
+Next year 2027 energy: ${yr2027}
+HOW THE TWO SYSTEMS ALIGN: Eastern fate cycle gives 10-year precision. Western planetary transits confirm and narrow timing to seasons and years. When both point to same period — that timing is certain. Jupiter cycles = 12 years. Saturn restructures at ages 29-30 and 58-60.
+PERSON: ${name}, ${gender}, born ${dateV}${timeV?' at '+timeV:''} in ${bCityV}, lives in ${cCityV}, currently age ${currentAge}.
+
+TASK: Tell them ${focusMap[focus]||focusMap.general}.
+
+RULES — NON NEGOTIABLE:
+Every sentence is a prediction about the FUTURE. Zero technical terms. Speak directly to ${name} as "you". Give SPECIFIC timing — exact years, age ranges, seasonal windows. Use confident language: "this will", "you will", "expect" — never "might" or "could". Include hard periods honestly — they make good predictions believable. Where both systems agree on timing say "every signal points to [year]". Make them feel the relief of knowing — "this difficult stretch ends in [year]".
+
+Structure (bold headers):
+**Where You Stand Right Now** — what this exact moment means, what cycle they're in, how long it lasts
+**The Next Three Years** — 2026, 2027, 2028 specific predictions for each
+**Your Biggest Window** — when the single most significant opportunity of the next decade arrives and what to do to be ready
+**What Both Systems Agree On** — the prediction that shows up in BOTH Eastern cycles AND Western planetary timing
+**Act On This Now** — 3 specific actions tied to where they are in their fate cycle
+
+580 words. Every sentence feels like someone who has seen the whole map of their life is finally telling them the truth. No hedging.`;
+
+  const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
+  loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
+  try{
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1600,stream:true,messages:[{role:'user',content:prompt}]})});
+    if(!res.ok){const e=await res.json();throw new Error(e.error?.message||'Something went wrong');}
+    loadEl.style.display='none';textEl.classList.add('streaming');
+    const dec=new TextDecoder(),reader=res.body.getReader();
+    while(true){const{done,value}=await reader.read();if(done)break;for(const line of dec.decode(value).split('\n')){if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta?.text)textEl.textContent+=j.delta.text;}catch{}}}
+    textEl.classList.remove('streaming');
+  }catch(err){loadEl.style.display='none';errEl.textContent=err.message;errEl.style.display='block';}
+  document.getElementById('submitbtn').disabled=false;
+  document.getElementById('submitbtn').textContent='READ MY FUTURE';
+});
+document.getElementById('resetbtn').addEventListener('click',()=>{document.getElementById('results').style.display='none';document.getElementById('form-area').style.display='block';});
+</script>
+</body>
+</html>
