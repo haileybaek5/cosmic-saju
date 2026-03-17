@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_21.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_22.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,9 +124,9 @@ select option{background:#12131f;color:#e8e4f0;}
 .verify-opt{padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:2px;cursor:pointer;font-size:14px;color:rgba(232,228,240,0.65);font-family:sans-serif;transition:all .2s;text-align:left;}
 .verify-opt:hover{border-color:var(--star);color:#e8e4f0;background:rgba(168,196,224,0.06);}
 .verify-opt.selected{border-color:var(--star);color:#e8e4f0;background:rgba(168,196,224,0.1);}
-.rsection-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--gold);margin:36px 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,0.2);}
+.rsection-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--gold);margin:36px 0 12px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,0.2);text-transform:uppercase;}
 .rsection-title:first-child{margin-top:0;}
-.rsection-body{font-size:18px;line-height:2.05;color:rgba(232,228,240,0.88);margin-bottom:8px;}
+.rsection-body{font-size:18px;line-height:1.95;color:rgba(232,228,240,0.88);margin-bottom:16px;}
 .loading{text-align:center;font-size:14px;color:#9a94b0;letter-spacing:2px;padding:32px 0;animation:pulse 1.5s ease-in-out infinite;font-family:sans-serif;}
 .resetbtn{display:block;margin:52px auto 0;background:transparent;border:none;color:#9a94b0;font-size:13px;letter-spacing:2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-family:sans-serif;}
 .resetbtn:hover{color:var(--paper);}
@@ -457,16 +457,39 @@ Zero technical terms. Speak directly to ${name}. Specific timing. Confident pred
 });
 
 function renderReading(text){
-  const parts=text.split(/\*\*([^*]+)\*\*/);
+  // Normalize — remove any stray ** that aren't part of a proper **Title** pair
+  // First handle proper **Title** pairs
   let html='';
-  for(let i=0;i<parts.length;i++){
-    if(i%2===1){
-      html+=`<div class="rsection-title">${parts[i].trim()}</div>`;
-    } else {
-      const body=parts[i].replace(/^\n+/,'').replace(/\n+$/,'').trim();
-      if(body) html+=`<div class="rsection-body">${body.replace(/\n/g,'<br><br>')}</div>`;
+  const lines=text.split('\n');
+  let bodyBuffer=[];
+
+  const flushBody=()=>{
+    const body=bodyBuffer.join(' ').trim();
+    if(body) html+=`<div class="rsection-body">${body}</div>`;
+    bodyBuffer=[];
+  };
+
+  for(const line of lines){
+    const trimmed=line.trim();
+    // Detect a header line — starts and ends with **, or starts with ** and has content
+    const headerMatch=trimmed.match(/^\*\*(.+?)\*\*\s*[-—]?\s*(.*)?$/) || trimmed.match(/^\*\*(.+)$/);
+    if(headerMatch){
+      flushBody();
+      const title=headerMatch[1].replace(/\*\*/g,'').replace(/[-—].*$/,'').trim();
+      html+=`<div class="rsection-title">${title}</div>`;
+      // If there's content after the header on the same line, start body
+      const afterHeader=trimmed.replace(/^\*\*[^*]+\*\*\s*[-—]?\s*/,'').replace(/\*\*/g,'').trim();
+      if(afterHeader) bodyBuffer.push(afterHeader);
+    } else if(trimmed){
+      // Regular body line — strip any stray **
+      bodyBuffer.push(trimmed.replace(/\*\*/g,''));
+    } else if(bodyBuffer.length){
+      // Empty line = paragraph break only if we have content
+      const body=bodyBuffer.join(' ').trim();
+      if(body){ html+=`<div class="rsection-body">${body}</div>`; bodyBuffer=[]; }
     }
   }
+  flushBody();
   return html;
 }
 
@@ -576,13 +599,13 @@ TASK: Tell them ${focusMap[focus]||focusMap.general}.
 CRITICAL — HONESTY RULES:
 Real fate readings are not cheerleading. They contain hard truths alongside opportunities. If the chart shows a difficult period, say so clearly — "this will be hard" not "this will challenge you to grow." People can tell when a reading is fake-positive and it destroys trust.
 
-When cross-referencing the two systems: if Eastern cycles say one thing and Western planets say another, note the tension — "the Eastern reading points to opportunity here, but the Western timing suggests resistance." That conflict IS the insight.
+When cross-referencing the two systems: if Eastern cycles say one thing and Western planets say another, note the tension. That conflict IS the insight.
 
 Base your reading ONLY on what the actual chart data shows. Do not invent optimism that isn't supported by the data. If someone is in a genuinely difficult cycle, say so and explain when it ends.
 
-TODAY'S DATE: ${todayStr}. ${NOW_MONTH>=3?'Spring begins around March 20.':''} Never reference any date already passed. Use specific months, never vague seasonal terms alone.
+TODAY'S DATE: ${todayStr}.${focus==='currentyear'?' Only predict from today forward — never reference months already passed this year.':focus==='nextyear'?` ${NEXT_YEAR} is entirely in the future — cover ALL months January through December.`:''} Use specific months, never vague seasonal terms alone.
 
-Every sentence is a prediction from today forward. Zero technical terms. Speak directly to ${name} as "you". Confident language where the chart supports it — but honest language where it doesn't. Include the hard periods — they are what make the good predictions credible and the reading feel real.
+Every sentence is a prediction from today forward. Zero technical terms. Speak directly to ${name} as "you". Confident language where the chart supports it — honest language where it doesn't.
 
 Structure — use these EXACT bold headers, each on its own line with a blank line before the body text:
 ${structure}
