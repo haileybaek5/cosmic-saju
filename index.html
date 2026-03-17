@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_18.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_19.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -531,29 +531,31 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   const nextYearEnergy=`${STEMS[nextYearIdx%10]}${BRANCHES[nextYearIdx%12]} ${STEM_EL[nextYearIdx%10]}/${BRANCH_EL[nextYearIdx%12]}`;
 
   const structure = focus==='currentyear' ? `
-**Where You Are in ${NOW_YEAR}**  — what this moment in the year means, what's already happened energetically, what phase you're entering now
-**${MONTH_NAMES[NOW_MONTH-1]} through June** — specific predictions month by month for the near term
+**Where You Are in ${NOW_YEAR}** — what this moment in the year means, what phase you're entering now
+**${MONTH_NAMES[NOW_MONTH-1]} through June** — specific predictions month by month
 **July through September** — what this window holds
 **October through December** — how the year closes out
-**The One Thing** — the single most important action to take before ${NOW_YEAR} ends` 
+**The One Thing** — the single most important action to take before ${NOW_YEAR} ends`
   : focus==='nextyear' ? `
-**The Theme of ${NEXT_YEAR}** — what this year is fundamentally about for them
-**First Half (January–June)** — quarter by quarter
-**Second Half (July–December)** — quarter by quarter  
-**Your Biggest Opportunity** — the single best window in ${NEXT_YEAR} and what to do with it
+**The Theme of ${NEXT_YEAR}** — what this year is fundamentally about
+**January through June** — first half predictions
+**July through December** — second half predictions
+**Your Biggest Opportunity** — the single best window in ${NEXT_YEAR} and what to do
 **What to Prepare Now** — 3 things to do before ${NEXT_YEAR} starts`
   : `
-**Where You Stand Right Now** — what this exact moment means, what cycle they're in, how long it lasts
-**The Next Three Years** — ${NOW_YEAR}, ${NEXT_YEAR}, ${NOW_YEAR+2} specific predictions for each
-**Your Biggest Window** — when the single most significant opportunity of the next decade arrives
-**What Both Systems Agree On** — the prediction that shows up in BOTH Eastern cycles AND Western planetary timing
+**Where You Stand Right Now** — what this exact moment means, what cycle they're in
+**The Next Three Years** — ${NOW_YEAR}, ${NEXT_YEAR}, ${NOW_YEAR+2} specific predictions
+**Your Biggest Window** — when the most significant opportunity of the next decade arrives
+**What Both Systems Agree On** — the prediction appearing in BOTH Eastern and Western timing
 **Act On This Now** — 3 specific actions`;
+
+  const focusMap={
     general:`the major fate turning points across the next 5-10 years — when the big shifts happen, what each phase is building toward, and what their overall destiny arc looks like`,
     career:`their career and financial future — when their biggest professional breakthrough arrives, what ${NOW_YEAR}-${NOW_YEAR+2} look like for money and ambition, and the single most important career move to make right now`,
     love:`their romantic future — what kind of relationship is coming, when the most significant romantic window opens, what patterns are ending, and what ${NOW_YEAR}-${NOW_YEAR+1} holds for their love life`,
-    currentyear:`the rest of ${NOW_YEAR} specifically — today is ${todayStr}, so only predict ${remainingMonths.join(', ')}. Give month-by-month guidance where possible. What opportunities are still ahead this year, what to watch out for, and the single most important thing to do before ${NOW_YEAR} ends`,
-    nextyear:`all of ${NEXT_YEAR} specifically — give quarter-by-quarter predictions. What the year's dominant theme is, when the best windows open, when to be careful, and what action to take in each quarter`,
-    health:`their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now, and how their energy shifts over the next 3 years`
+    currentyear:`the rest of ${NOW_YEAR} specifically — today is ${todayStr}, so only predict ${remainingMonths.join(', ')}. Month by month where possible. What opportunities are still ahead, what to watch out for, the most important thing to do before ${NOW_YEAR} ends`,
+    nextyear:`all of ${NEXT_YEAR} specifically — quarter by quarter predictions. The year's dominant theme, when the best windows open, when to be careful, what action to take each quarter`,
+    health:`their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now, how their energy shifts over the next 3 years`
   };
 
   const prompt=`You are the world's most accurate fate reader, combining Eastern Four Pillars destiny cycles with Western astrology planetary timing. Your only job is to tell ${name} what is going to happen — specific predictions, specific timing.
