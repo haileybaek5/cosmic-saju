@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0046)file:///Users/hyeinbaek/Downloads/index_5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cosmic Saju</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -37,6 +37,7 @@ h1{font-family:'Cinzel',serif;font-size:34px;font-weight:600;letter-spacing:7px;
 .mc-w .mc-title{color:rgba(168,196,224,0.7);}
 .mc-b .mc-title{color:rgba(180,160,255,0.7);}
 .mc-body{font-size:13px;line-height:1.8;color:rgba(232,228,240,0.45);}
+.mc-body em{color:rgba(232,228,240,0.8);font-style:italic;}
 
 .form-section{padding:36px 0;}
 .card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);padding:30px;border-radius:4px;}
@@ -130,22 +131,20 @@ select option{background:#12131f;color:var(--paper);}
   </div>
 
   <div class="merit">
-    <p>Cosmic Saju combines two ancient systems that have independently predicted human fate for thousands of years — Eastern Four Pillars and Western astrology — into a single reading.</p>
     <div class="merit-cards">
       <div class="mcard mc-e">
         <div class="mc-title">Eastern Four Pillars</div>
-        <div class="mc-body">Maps your life into precise 10-year cycles, showing exactly when fortune opens, when it closes, and what each phase of your life is building toward. Millions across East Asia consult it before every major decision.</div>
+        <div class="mc-body">Tells you the <em>when</em>. It maps your life into precise 10-year cycles, showing exactly when fortune opens, when it closes, and what each phase of your life is building toward. Millions across East Asia consult it before every major decision.</div>
       </div>
       <div class="mcard mc-w">
         <div class="mc-title">Western Astrology</div>
-        <div class="mc-body">The positions of the planets at the moment you were born reveal your drives and patterns. Through their ongoing movement, they pinpoint the specific opportunities and challenges arriving in your life right now.</div>
+        <div class="mc-body">Tells you the <em>what</em>. The positions of the planets at the moment you were born reveal your drives, your patterns, and through their ongoing movement, pinpoint the specific opportunities and challenges arriving in your life right now.</div>
       </div>
       <div class="mcard mc-b">
         <div class="mc-title">Why Both Together</div>
-        <div class="mc-body">When both systems point to the same year as a turning point, you can trust it. When one is vague, the other is specific. The result is a reading that tells you what is actually coming and when.</div>
+        <div class="mc-body">Two ancient systems that have independently predicted human fate for thousands of years. Built on opposite sides of the world, using completely different methods. When both independently point to the same period as a turning point, that convergence is the most powerful signal in the reading. When they diverge, you see dimensions of your fate that neither system could show you alone.</div>
       </div>
     </div>
-    <p>Enter your birth details. The reading tells you what's ahead — specific periods, specific timing, specific guidance.</p>
   </div>
 
   <div class="form-section" id="form-area">
@@ -155,7 +154,7 @@ select option{background:#12131f;color:var(--paper);}
         <div class="field"><label class="fl">Full Name</label><input type="text" id="name" placeholder="Your name"></div>
         <div class="field"><label class="fl">Gender</label>
           <div class="gtoggle">
-            <input type="radio" name="gender" id="gf" value="female" checked><label for="gf">Female</label>
+            <input type="radio" name="gender" id="gf" value="female" checked=""><label for="gf">Female</label>
             <input type="radio" name="gender" id="gm" value="male"><label for="gm">Male</label>
           </div>
         </div>
@@ -426,5 +425,6 @@ Structure (bold headers):
 });
 document.getElementById('resetbtn').addEventListener('click',()=>{document.getElementById('results').style.display='none';document.getElementById('form-area').style.display='block';});
 </script>
-</body>
-</html>
+
+
+</body></html>
