@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_30.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#07080f">
 <title>Cosmic Saju</title>
-<link rel="manifest" href="/manifest.json">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="manifest" href="file:///manifest.json">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#07080f;--paper:#e8e4f0;--gold:#c9a84c;--red:#c0392b;--star:#a8c4e0;}
@@ -188,7 +188,7 @@ select option{background:#12131f;color:#e8e4f0;}
         <div class="field"><label class="fl">Full Name</label><input type="text" id="name" placeholder="Your name"></div>
         <div class="field"><label class="fl">Gender</label>
           <div class="gtoggle">
-            <input type="radio" name="gender" id="gf" value="female" checked><label for="gf">Female</label>
+            <input type="radio" name="gender" id="gf" value="female" checked=""><label for="gf">Female</label>
             <input type="radio" name="gender" id="gm" value="male"><label for="gm">Male</label>
           </div>
         </div>
@@ -223,11 +223,11 @@ select option{background:#12131f;color:#e8e4f0;}
       <div class="field"><label class="fl">What Do You Want to Know?</label>
         <select id="focus">
           <option value="general">My overall destiny — the next 5-10 years</option>
-          <option value="career">Career & money — when does my breakthrough come</option>
+          <option value="career">Career &amp; money — when does my breakthrough come</option>
           <option value="love">Love life — what's coming and when</option>
           <option value="currentyear">This year's forecast</option>
           <option value="nextyear">Next year's forecast</option>
-          <option value="health">Health & energy — what's ahead physically</option>
+          <option value="health">Health &amp; energy — what's ahead physically</option>
         </select>
       </div>
       <button class="submitbtn" id="submitbtn">READ MY FUTURE</button>
@@ -475,12 +475,19 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   const curYearEnergy=STEMS[curYearIdx%10]+BRANCHES[curYearIdx%12]+' '+STEM_EL[curYearIdx%10]+'/'+BRANCH_EL[curYearIdx%12];
   const nextYearEnergy=STEMS[nextYearIdx%10]+BRANCHES[nextYearIdx%12]+' '+STEM_EL[nextYearIdx%10]+'/'+BRANCH_EL[nextYearIdx%12];
 
+  const openingSection={
+    general:'**Where Your Life Is Heading** — what the next 5-10 years are fundamentally building toward, and what phase you are in right now',
+    career:'**Where Your Career Stands Right Now** — what the current cycle means specifically for work, money, and ambition — not life in general, just career',
+    love:'**Where You Stand in Love Right Now** — what the current cycle means specifically for relationships and romance — what pattern is ending, what is beginning',
+    health:'**Where Your Body and Energy Stand** — what the current cycle means specifically for health, vitality, and physical wellbeing right now'
+  }[focus] || '**Where You Stand Right Now** — what this exact moment means, what cycle you are in';
+
   const structure=focus==='currentyear'?
-    '**Where You Are in '+NOW_YEAR+'** — what this moment means and what phase you are entering\n**'+MONTH_NAMES[NOW_MONTH-1]+' through June** — specific predictions month by month\n**July through September** — what this window holds\n**October through December** — how the year closes\n**The One Thing** — the single most important action before '+NOW_YEAR+' ends'
+    '**Where You Are in '+NOW_YEAR+'** — what this moment in the year means specifically, what phase you are entering RIGHT NOW in '+NOW_YEAR+'\n**'+MONTH_NAMES[NOW_MONTH-1]+' through June** — specific predictions month by month\n**July through September** — what this window holds\n**October through December** — how the year closes\n**The One Thing** — the single most important action before '+NOW_YEAR+' ends'
   :focus==='nextyear'?
     '**The Theme of '+NEXT_YEAR+'** — what this year is fundamentally about\n**January through June** — first half predictions month by month\n**July through December** — second half predictions\n**Your Biggest Opportunity** — the single best window in '+NEXT_YEAR+'\n**What to Prepare Now** — 3 concrete things to do before '+NEXT_YEAR+' starts'
   :
-    '**Where You Stand Right Now** — what this exact moment means, what cycle you are in\n**The Next Three Years** — '+NOW_YEAR+', '+NEXT_YEAR+', '+(NOW_YEAR+2)+' specific predictions for each\n**Your Biggest Window** — when the most significant opportunity of the next decade arrives\n**What Both Systems Agree On** — the prediction appearing in BOTH Eastern and Western timing\n**Act On This Now** — 3 specific actions';
+    openingSection+'\n**The Next Three Years** — '+NOW_YEAR+', '+NEXT_YEAR+', '+(NOW_YEAR+2)+' specific predictions for each, focused on '+focus+'\n**Your Biggest Window** — when the most significant opportunity arrives specifically for '+focus+'\n**What Both Systems Agree On** — where Eastern cycles and Western timing converge on the same prediction\n**Act On This Now** — 3 specific actions';
 
   const focusMap={
     general:'the major fate turning points across the next 5-10 years — when the big shifts happen, what each phase is building toward, and what their overall destiny arc looks like',
@@ -528,5 +535,6 @@ document.getElementById('resetbtn').addEventListener('click',()=>{
   document.getElementById('recalibrate-text').innerHTML='';
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
