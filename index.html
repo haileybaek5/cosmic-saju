@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_27.html -->
+<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_28.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#07080f">
 <title>Cosmic Saju</title>
+<link rel="manifest" href="file:///manifest.json">
 <link href="./index_files/css2" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -11,8 +15,6 @@
 body{background:var(--ink);color:var(--paper);font-family:'EB Garamond',serif;min-height:100vh;padding:0 0 80px;font-size:18px;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(201,168,76,0.05) 0%,transparent 50%),radial-gradient(ellipse at 85% 20%,rgba(124,111,160,0.07) 0%,transparent 50%);pointer-events:none;z-index:0;}
 .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 48px;}
-
-/* HERO */
 .hero{text-align:center;padding:60px 20px 52px;border-bottom:1px solid rgba(255,255,255,0.08);}
 .badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(201,168,76,0.3);padding:7px 20px;margin-bottom:20px;border-radius:2px;}
 .be{font-size:11px;letter-spacing:2px;color:var(--gold);font-family:sans-serif;}
@@ -22,8 +24,6 @@ h1{font-family:'Cinzel',serif;font-size:56px;font-weight:600;letter-spacing:10px
 .sub{font-size:15px;color:#9a94b0;letter-spacing:4px;font-family:sans-serif;margin-bottom:28px;}
 .dualline{display:flex;align-items:center;justify-content:center;gap:20px;font-size:14px;letter-spacing:2px;font-family:sans-serif;}
 .de{color:rgba(201,168,76,0.7)}.dw{color:rgba(168,196,224,0.7)}.dx{color:rgba(255,255,255,0.2)}
-
-/* MERIT */
 .merit{padding:52px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
 .merit-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .mcard{padding:28px 24px;border-radius:3px;font-family:sans-serif;}
@@ -31,13 +31,9 @@ h1{font-family:'Cinzel',serif;font-size:56px;font-weight:600;letter-spacing:10px
 .mc-w{background:rgba(168,196,224,0.06);border:1px solid rgba(168,196,224,0.25);}
 .mc-b{background:rgba(147,112,219,0.06);border:1px solid rgba(147,112,219,0.25);grid-column:1/-1;}
 .mc-title{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
-.mc-e .mc-title{color:var(--gold);}
-.mc-w .mc-title{color:var(--star);}
-.mc-b .mc-title{color:rgba(200,180,255,0.9);}
+.mc-e .mc-title{color:var(--gold);}.mc-w .mc-title{color:var(--star);}.mc-b .mc-title{color:rgba(200,180,255,0.9);}
 .mc-body{font-size:15px;line-height:1.85;color:rgba(232,228,240,0.65);}
 .mc-body em{color:#e8e4f0;font-style:italic;}
-
-/* FORM */
 .form-section{padding:48px 0;}
 .card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);padding:48px;border-radius:4px;}
 .slabel{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b0aac0;margin:36px 0 18px;display:flex;align-items:center;gap:12px;font-family:sans-serif;}
@@ -68,18 +64,14 @@ select option{background:#12131f;color:#e8e4f0;}
 .submitbtn:hover{background:rgba(201,168,76,0.12);}
 .submitbtn:disabled{opacity:.4;cursor:not-allowed;}
 .errmsg{color:#e57373;font-size:14px;text-align:center;padding:12px;border:1px solid rgba(229,115,115,0.4);margin-top:14px;display:none;border-radius:3px;font-family:sans-serif;}
-
-/* RESULTS */
 #results{display:none;padding-top:48px;}
 .rhead{text-align:center;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);}
 .rname{font-family:'Cinzel',serif;font-size:28px;letter-spacing:5px;margin-bottom:8px;}
 .rmeta{font-size:14px;color:#9a94b0;line-height:2;font-family:sans-serif;}
-
 .sec-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#9a94b0;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
 .sec-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
 .sec-title span{color:var(--gold);}
-
-.daeun-track{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:8px;}
+.daeun-track{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:8px;-webkit-overflow-scrolling:touch;}
 .daeun-track::-webkit-scrollbar{height:4px;}
 .daeun-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
 .dblock{min-width:88px;padding:14px 8px;border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-align:center;flex-shrink:0;}
@@ -90,14 +82,12 @@ select option{background:#12131f;color:#e8e4f0;}
 .dbranch{font-size:24px;color:var(--red);line-height:1;}
 .dyear{font-size:9px;color:rgba(232,228,240,0.3);margin-top:5px;font-family:sans-serif;}
 .current-label{font-size:12px;color:rgba(201,168,76,0.7);text-align:center;letter-spacing:1px;font-family:sans-serif;margin-bottom:32px;}
-
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
 .panel{border-radius:3px;padding:20px;}
 .pe{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);}
 .pw{background:rgba(168,196,224,0.05);border:1px solid rgba(168,196,224,0.2);}
 .ptitle{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;font-family:sans-serif;}
-.pe .ptitle{color:rgba(201,168,76,0.8);}
-.pw .ptitle{color:rgba(168,196,224,0.8);}
+.pe .ptitle{color:rgba(201,168,76,0.8);}.pw .ptitle{color:rgba(168,196,224,0.8);}
 .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .pillar{text-align:center;padding:12px 4px;border:1px solid rgba(201,168,76,0.15);border-radius:2px;}
 .plab{font-size:10px;color:#9a94b0;text-transform:uppercase;margin-bottom:6px;font-family:sans-serif;}
@@ -111,7 +101,6 @@ select option{background:#12131f;color:#e8e4f0;}
 .plgrid{display:flex;flex-direction:column;gap:5px;}
 .plrow{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(168,196,224,0.1);font-family:sans-serif;}
 .plname{color:rgba(168,196,224,0.8)}.plsign{color:rgba(232,228,240,0.75)}.pldeg{color:rgba(168,196,224,0.45);font-size:12px;}
-
 .rtitle{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#9a94b0;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .rtitle .re{color:rgba(201,168,76,0.8)}.rtitle .rw{color:rgba(168,196,224,0.8)}
 .rtitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
@@ -132,11 +121,42 @@ select option{background:#12131f;color:#e8e4f0;}
 .resetbtn:hover{color:var(--paper);}
 @keyframes blink{50%{opacity:0}}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+
+@media(max-width:640px){
+  .wrap{padding:0 16px;}
+  h1{font-size:28px;letter-spacing:4px;}
+  .sub{font-size:12px;letter-spacing:2px;}
+  .dualline{font-size:11px;gap:10px;flex-wrap:wrap;}
+  .hero{padding:36px 12px 32px;}
+  .badge{padding:5px 12px;}
+  .be,.bw{font-size:9px;}
+  .merit{padding:32px 0;}
+  .merit-cards{grid-template-columns:1fr;}
+  .mc-b{grid-column:1;}
+  .mcard{padding:20px 16px;}
+  .mc-body{font-size:14px;}
+  .form-section{padding:28px 0;}
+  .card{padding:20px 16px;}
+  .row2,.row3{grid-template-columns:1fr;}
+  .slabel{margin:20px 0 12px;font-size:9px;}
+  input,select{font-size:16px;padding:13px 14px;}
+  .submitbtn{font-size:11px;letter-spacing:3px;padding:16px;}
+  .panels{grid-template-columns:1fr;}
+  .pstem,.pbranch{font-size:22px;}
+  .rname{font-size:18px;letter-spacing:2px;}
+  .rmeta{font-size:11px;}
+  .rsection-title{font-size:11px;letter-spacing:2px;margin:24px 0 10px;}
+  .rsection-body{font-size:16px;line-height:1.8;}
+  .dblock{min-width:70px;}
+  .dstem,.dbranch{font-size:20px;}
+  .dage,.dyear{font-size:8px;}
+  .plrow{font-size:12px;}
+  .verify-opt{font-size:14px;padding:14px 12px;}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <div class="hero">
     <div class="badge"><span class="be">FOUR PILLARS</span><span class="bsep"></span><span class="bw">WESTERN ASTROLOGY ✦</span></div>
     <h1>COSMIC SAJU</h1>
@@ -179,7 +199,7 @@ select option{background:#12131f;color:#e8e4f0;}
           <select id="cal"><option value="solar">Solar (Gregorian)</option><option value="lunar">Lunar</option></select>
         </div>
         <div class="field"><label class="fl">Birth Date</label><input type="date" id="bdate"></div>
-        <div class="field"><label class="fl">Birth Time <span style="font-size:10px;color:rgba(232,228,240,0.35);letter-spacing:1px;text-transform:none;font-family:sans-serif;">— optional</span></label><input type="time" id="btime" step="60"></div>
+        <div class="field"><label class="fl">Birth Time <span style="font-size:10px;color:rgba(232,228,240,0.35);letter-spacing:1px;text-transform:none;font-family:sans-serif;">optional</span></label><input type="time" id="btime" step="60"></div>
       </div>
       <div class="field"><label class="fl">Birth Time Note</label>
         <select id="topt">
@@ -230,8 +250,6 @@ select option{background:#12131f;color:#e8e4f0;}
     <div class="rtitle"><span class="re">Four Pillars</span><span>×</span><span class="rw">Astrology</span> · Your Future</div>
     <div class="loading" id="loading">Reading your fate · · ·</div>
     <div class="rbody" id="rtext"></div>
-
-    <!-- Verification section — only shown for current year focus when past months exist -->
     <div id="verify-section" style="display:none;margin-top:48px;">
       <div class="rtitle"><span style="color:var(--star)">Calibrate</span> · What Actually Happened</div>
       <p style="font-size:15px;color:rgba(232,228,240,0.55);font-family:sans-serif;margin-bottom:28px;line-height:1.7;">The reading made predictions about months that have already passed. Tell us what actually happened — the more accurate your answers, the sharper the forecast for what's still ahead.</p>
@@ -240,7 +258,6 @@ select option{background:#12131f;color:#e8e4f0;}
     </div>
     <div class="loading" id="recalibrate-loading" style="display:none;">Recalibrating with your context · · ·</div>
     <div class="rbody" id="recalibrate-text" style="margin-top:24px;"></div>
-
     <button class="resetbtn" id="resetbtn">← Start over</button>
   </div>
 </div>
@@ -253,7 +270,6 @@ const BRANCH_EL=['Water','Earth','Wood','Wood','Earth','Fire','Fire','Earth','Me
 const EL_H={Wood:'木',Fire:'火',Earth:'土',Metal:'金',Water:'水'};
 const EL_C={Wood:'ew',Fire:'ef',Earth:'ee',Metal:'em',Water:'ewt'};
 const ZODIAC=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
-
 const IPCHUN={1900:[2,4],1901:[2,5],1902:[2,4],1903:[2,4],1904:[2,5],1905:[2,4],1906:[2,4],1907:[2,5],1908:[2,5],1909:[2,4],1910:[2,4],1911:[2,5],1912:[2,5],1913:[2,4],1914:[2,4],1915:[2,5],1916:[2,5],1917:[2,4],1918:[2,4],1919:[2,5],1920:[2,5],1921:[2,4],1922:[2,4],1923:[2,5],1924:[2,5],1925:[2,4],1926:[2,4],1927:[2,5],1928:[2,5],1929:[2,4],1930:[2,4],1931:[2,5],1932:[2,5],1933:[2,4],1934:[2,4],1935:[2,5],1936:[2,5],1937:[2,4],1938:[2,4],1939:[2,5],1940:[2,5],1941:[2,4],1942:[2,4],1943:[2,5],1944:[2,5],1945:[2,4],1946:[2,4],1947:[2,5],1948:[2,5],1949:[2,4],1950:[2,4],1951:[2,5],1952:[2,5],1953:[2,4],1954:[2,4],1955:[2,5],1956:[2,5],1957:[2,4],1958:[2,4],1959:[2,5],1960:[2,5],1961:[2,4],1962:[2,4],1963:[2,5],1964:[2,5],1965:[2,4],1966:[2,4],1967:[2,5],1968:[2,5],1969:[2,4],1970:[2,4],1971:[2,5],1972:[2,5],1973:[2,4],1974:[2,4],1975:[2,5],1976:[2,5],1977:[2,4],1978:[2,4],1979:[2,5],1980:[2,5],1981:[2,4],1982:[2,4],1983:[2,5],1984:[2,4],1985:[2,4],1986:[2,4],1987:[2,4],1988:[2,4],1989:[2,4],1990:[2,4],1991:[2,4],1992:[2,4],1993:[2,4],1994:[2,4],1995:[2,4],1996:[2,4],1997:[2,4],1998:[2,4],1999:[2,4],2000:[2,4],2001:[2,4],2002:[2,4],2003:[2,4],2004:[2,4],2005:[2,4],2006:[2,4],2007:[2,4],2008:[2,4],2009:[2,4],2010:[2,4],2011:[2,4],2012:[2,4],2013:[2,4],2014:[2,4],2015:[2,4],2016:[2,4],2017:[2,3],2018:[2,4],2019:[2,4],2020:[2,4],2021:[2,3],2022:[2,4],2023:[2,4],2024:[2,4],2025:[2,3],2026:[2,4],2027:[2,4],2028:[2,4],2029:[2,3],2030:[2,4],2031:[2,4],2032:[2,4],2033:[2,3],2034:[2,4],2035:[2,4],2036:[2,4],2037:[2,3],2038:[2,4],2039:[2,4],2040:[2,4],2041:[2,3],2042:[2,4],2043:[2,4],2044:[2,4],2045:[2,3],2046:[2,4],2047:[2,4],2048:[2,4],2049:[2,3],2050:[2,4]};
 const MONTH_TERMS=[[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,7],[9,8],[10,8],[11,7],[12,7],[1,6]];
 const MBRN=[2,3,4,5,6,7,8,9,10,11,0,1];
@@ -264,9 +280,9 @@ function getDST(y,m,d){const p=[[1948,5,1,1948,9,12],[1949,4,3,1949,9,10],[1950,
 function calcSaju(year,month,day,timeStr,topt,bLon){
   const notes=[];let hour=12,minute=0;
   if(timeStr)[hour,minute]=timeStr.split(':').map(Number);
-  const dst=getDST(year,month,day);if(dst)notes.push(`DST -${dst}min`);
+  const dst=getDST(year,month,day);if(dst)notes.push('DST -'+dst+'min');
   let lonCorr=bLon!=null?Math.round((bLon-135)*4):0;
-  if(Math.abs(lonCorr)>=1)notes.push(`Lon ${lonCorr>0?'+':''}${lonCorr}min`);
+  if(Math.abs(lonCorr)>=1)notes.push('Lon '+(lonCorr>0?'+':'')+lonCorr+'min');
   let cm=hour*60+minute-dst+lonCorr,cy=year,cmo=month,cd=day;
   while(cm<0){cm+=1440;cd--;if(cd<1){cmo--;if(cmo<1){cmo=12;cy--;}cd=new Date(cy,cmo,0).getDate();}}
   while(cm>=1440){cm-=1440;cd++;const mx=new Date(cy,cmo,0).getDate();if(cd>mx){cd=1;cmo++;if(cmo>12){cmo=1;cy++;}}}
@@ -278,7 +294,7 @@ function calcSaju(year,month,day,timeStr,topt,bLon){
   let sajuYear=cy;if(beforeIp){sajuYear=cy-1;notes.push('Before solar new year');}
   const yIdx=((sajuYear-4)%60+60)%60;
   const termDates=[];
-  for(let i=0;i<12;i++){let[tm,td]=MONTH_TERMS[i];let ty=cy;if(tm===1)ty=cy+1;termDates.push({jd2:jd(ty,tm,td,12),brIdx:MBRN[i]});}
+  for(let i=0;i<12;i++){let tm=MONTH_TERMS[i][0],td=MONTH_TERMS[i][1];let ty=cy;if(tm===1)ty=cy+1;termDates.push({jd2:jd(ty,tm,td,12),brIdx:MBRN[i]});}
   termDates.push({jd2:jd(cy-1,12,7,12),brIdx:1});
   termDates.push({jd2:jd(cy+1,2,4,12),brIdx:2});
   termDates.sort((a,b)=>a.jd2-b.jd2);
@@ -289,7 +305,7 @@ function calcSaju(year,month,day,timeStr,topt,bLon){
   let hStem=null,hBr=null;
   if(timeStr&&topt!=='unknown'){const tot=ch*60+cmin;hBr=(tot>=23*60||tot<60)?0:Math.floor((tot-60)/120)+1;hStem=((dIdx%5)*2+hBr)%10;}
   const mk=(s,b,lbl)=>({label:lbl,stem:s!=null?STEMS[s%10]:'?',branch:b!=null?BRANCHES[b%12]:'?',stemEl:s!=null?STEM_EL[s%10]:'?',branchEl:b!=null?BRANCH_EL[b%12]:'?'});
-  return{pillars:[mk(yIdx%10,yIdx%12,'Year'),mk(mStemIdx,mBrIdx,'Month'),mk(dIdx%10,dIdx%12,'Day'),mk(hStem,hBr,'Hour')],notes,corrTime:timeStr?`${String(ch).padStart(2,'0')}:${String(cmin).padStart(2,'0')}`:null,mStemIdx,mBrIdx,yIdx,dIdx,birthJD};
+  return{pillars:[mk(yIdx%10,yIdx%12,'Year'),mk(mStemIdx,mBrIdx,'Month'),mk(dIdx%10,dIdx%12,'Day'),mk(hStem,hBr,'Hour')],notes,corrTime:timeStr?String(ch).padStart(2,'0')+':'+String(cmin).padStart(2,'0'):null,mStemIdx,mBrIdx,yIdx,dIdx,birthJD};
 }
 
 function countEl(p){const c={};p.forEach(x=>{if(x.stemEl&&x.stemEl!=='?')c[x.stemEl]=(c[x.stemEl]||0)+1;if(x.branchEl&&x.branchEl!=='?')c[x.branchEl]=(c[x.branchEl]||0)+1;});return c;}
@@ -298,7 +314,7 @@ function calcDaeun(birthYear,gender,mStemIdx,mBrIdx,yIdx,birthJD){
   const yearIsYang=(yIdx%2===0);
   const goForward=(gender==='male'&&yearIsYang)||(gender==='female'&&!yearIsYang);
   let minDiff=Infinity;
-  for(let yr=birthYear-1;yr<=birthYear+1;yr++){for(const[tm,td] of MONTH_TERMS){const ty=tm===1?yr+1:yr;const tjd=jd(ty,tm,td,12);const diff=goForward?(tjd-birthJD):(birthJD-tjd);if(diff>0&&diff<minDiff)minDiff=diff;}}
+  for(let yr=birthYear-1;yr<=birthYear+1;yr++){for(let i=0;i<12;i++){const tm=MONTH_TERMS[i][0],td=MONTH_TERMS[i][1];const ty=tm===1?yr+1:yr;const tjd=jd(ty,tm,td,12);const diff=goForward?(tjd-birthJD):(birthJD-tjd);if(diff>0&&diff<minDiff)minDiff=diff;}}
   const startAge=Math.max(1,Math.round(minDiff/3));
   const cycles=[];
   for(let i=1;i<=8;i++){const offset=goForward?i:-i;const si=((mStemIdx+offset)%10+10)%10;const bi=((mBrIdx+offset)%12+12)%12;const ageStart=startAge+(i-1)*10;cycles.push({stem:STEMS[si],branch:BRANCHES[bi],stemEl:STEM_EL[si],branchEl:BRANCH_EL[bi],ageStart,ageEnd:ageStart+9,yearStart:birthYear+ageStart,yearEnd:birthYear+ageStart+9});}
@@ -322,171 +338,79 @@ function calcPlanets(year,month,day,hour,lat,lon){
   return[{sym:'☉',name:'Sun',lon:sL,sign:sg(sL)},{sym:'☽',name:'Moon',lon:mL,sign:sg(mL)},{sym:'☿',name:'Mercury',lon:meL,sign:sg(meL)},{sym:'♀',name:'Venus',lon:vL,sign:sg(vL)},{sym:'♂',name:'Mars',lon:maL,sign:sg(maL)},{sym:'♃',name:'Jupiter',lon:jL,sign:sg(jL)},{sym:'♄',name:'Saturn',lon:saL,sign:sg(saL)},{sym:'↑',name:'Asc',lon:asc,sign:sg(asc)}];
 }
 
-async function geocode(q){try{const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&addressdetails=1`,{headers:{'Accept-Language':'en','User-Agent':'CosmicSaju/1.0'}});const d=await r.json();return d.map(x=>({short:[x.address?.city||x.address?.town||x.address?.county||x.address?.state,x.address?.country].filter(Boolean).join(', '),lat:parseFloat(x.lat),lon:parseFloat(x.lon)}));}catch{return[];}}
+async function geocode(q){try{const r=await fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(q)+'&format=json&limit=5&addressdetails=1',{headers:{'Accept-Language':'en','User-Agent':'CosmicSaju/1.0'}});const d=await r.json();return d.map(x=>({short:[x.address&&(x.address.city||x.address.town||x.address.county||x.address.state),x.address&&x.address.country].filter(Boolean).join(', '),lat:parseFloat(x.lat),lon:parseFloat(x.lon)}));}catch{return[];}}
+
 function initCity(inpId,suggId,onPick){
   const inp=document.getElementById(inpId),box=document.getElementById(suggId);let timer;
-  inp.addEventListener('input',()=>{clearTimeout(timer);const q=inp.value.trim();if(q.length<2){box.style.display='none';return;}timer=setTimeout(async()=>{const res=await geocode(q);if(!res.length){box.style.display='none';return;}box.innerHTML=res.map((r,i)=>`<div>${r.short}</div>`).join('');box.style.display='block';box.querySelectorAll('div').forEach((el,i)=>el.addEventListener('mousedown',ev=>{ev.preventDefault();inp.value=res[i].short;box.style.display='none';onPick(res[i]);}));},380);});
+  inp.addEventListener('input',()=>{clearTimeout(timer);const q=inp.value.trim();if(q.length<2){box.style.display='none';return;}timer=setTimeout(async()=>{const res=await geocode(q);if(!res.length){box.style.display='none';return;}box.innerHTML=res.map(r=>'<div>'+r.short+'</div>').join('');box.style.display='block';box.querySelectorAll('div').forEach((el,i)=>el.addEventListener('mousedown',ev=>{ev.preventDefault();inp.value=res[i].short;box.style.display='none';onPick(res[i]);}));},380);});
   inp.addEventListener('blur',()=>setTimeout(()=>{box.style.display='none';},200));
 }
 let bCity=null,cCity=null;
 initCity('bcity','bsugg',d=>{bCity=d;});
 initCity('ccity','csugg',d=>{cCity=d;});
 
-async function generateVerification(readingText, passedMonths, name, ctx){
-  const verifySection=document.getElementById('verify-section');
-  const verifyQs=document.getElementById('verify-questions');
-  const recalBtn=document.getElementById('recalibrate-btn');
-  verifySection.style.display='block';
-  verifyQs.innerHTML='<div class="loading" style="padding:20px 0;animation:pulse 1.5s ease-in-out infinite;font-size:13px;color:#9a94b0;letter-spacing:2px;font-family:sans-serif;">Preparing questions · · ·</div>';
-
-  // Ask Claude to extract predictions about past months and generate options
-  const prompt=`You are analyzing a fate reading to extract verifiable past predictions.
-
-The reading was for ${name}. Today is ${ctx.todayStr}.
-The reading covered the current year including these ALREADY PASSED months: ${passedMonths.join(', ')}.
-
-Here is the reading:
----
-${readingText}
----
-
-Extract up to ${Math.min(passedMonths.length, 3)} specific predictions made about the already-passed months (${passedMonths.join(', ')}).
-
-For each prediction, generate exactly 3 response options that are:
-- Specific to what was actually predicted (not generic)
-- Representing genuinely different life realities
-- Short (max 6 words each)
-
-Respond ONLY with valid JSON, no other text:
-[
-  {
-    "month": "January",
-    "prediction": "One sentence describing what the reading predicted for this month",
-    "options": ["Option A", "Option B", "Option C"]
-  }
-]
-
-If no specific predictions were made about past months, return an empty array: []`;
-
-  try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,stream:false,messages:[{role:'user',content:prompt}]})});
-    const data=await res.json();
-    const raw=data.content?.[0]?.text||'[]';
-    const clean=raw.replace(/```json|```/g,'').trim();
-    const questions=JSON.parse(clean);
-
-    if(!questions.length){verifySection.style.display='none';return;}
-
-    const answers={};
-    verifyQs.innerHTML=questions.map((q,i)=>`
-      <div class="verify-card">
-        <div class="verify-month">${q.month.toUpperCase()}</div>
-        <div class="verify-q">${q.prediction}</div>
-        <div class="verify-options">
-          ${q.options.map((opt,j)=>`<button class="verify-opt" data-q="${i}" data-j="${j}" onclick="selectOpt(this,${i},'${opt.replace(/'/g,"\\'")}',answers${i})">${opt}</button>`).join('')}
-        </div>
-      </div>`).join('');
-
-    // Store questions and answers on window for access
-    window._verifyQuestions=questions;
-    window._verifyAnswers={};
-    window._verifyCtx=ctx;
-    window._verifyName=name;
-
-    recalBtn.style.display='block';
-
-  }catch(e){verifySection.style.display='none';}
-}
-
-window.selectOpt=function(el,qIdx,val){
-  // Deselect others in same question
-  document.querySelectorAll(`.verify-opt[data-q="${qIdx}"]`).forEach(b=>b.classList.remove('selected'));
-  el.classList.add('selected');
-  window._verifyAnswers[qIdx]=val;
-  // Show recalibrate button only when all answered
-  const qs=window._verifyQuestions||[];
-  const allAnswered=qs.every((_,i)=>window._verifyAnswers[i]);
-  if(allAnswered) document.getElementById('recalibrate-btn').style.borderColor='var(--gold)';
-};
-
-document.getElementById('recalibrate-btn').addEventListener('click',async()=>{
-  const qs=window._verifyQuestions||[];
-  const ans=window._verifyAnswers||{};
-  const ctx=window._verifyCtx;
-  const name=window._verifyName;
-  if(!qs.every((_,i)=>ans[i])){
-    // Not all answered
-    document.querySelector('.verify-card').style.borderColor='rgba(229,115,115,0.4)';
-    return;
-  }
-  document.getElementById('verify-section').style.display='none';
-  const recalLoad=document.getElementById('recalibrate-loading');
-  const recalText=document.getElementById('recalibrate-text');
-  recalLoad.style.display='block';
-
-  const contextSummary=qs.map((q,i)=>`${q.month}: Reading predicted "${q.prediction}" — what actually happened: "${ans[i]}"`).join('\n');
-
-  const prompt=`You are recalibrating a fate reading for ${name} based on what actually happened in their life.
-
-ORIGINAL CHART DATA:
-Four Pillars: ${ctx.pillarTxt}
-Elements: ${ctx.elTxt}
-Western planets: ${ctx.planetTxt}
-${ctx.daeunTxt}
-${ctx.curD}
-
-WHAT THE READING PREDICTED VS WHAT ACTUALLY HAPPENED:
-${contextSummary}
-
-Today is ${ctx.todayStr}. Use what actually happened to sharpen the reading for the remaining months: ${ctx.remainingMonths.join(', ')}.
-
-Do NOT mention what the original reading said. Do NOT explain the recalibration. Just give the updated forecast for the remaining months of ${ctx.NOW_YEAR} and into ${ctx.NEXT_YEAR}, informed by what you now know about this person's actual life context.
-
-Zero technical terms. Speak directly to ${name}. Specific timing. Confident predictions. Same format as before with bold section headers.`;
-
-  try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,stream:true,messages:[{role:'user',content:prompt}]})});
-    recalLoad.style.display='none';
-    recalText.classList.add('streaming');
-    const dec=new TextDecoder(),reader=res.body.getReader();
-    let full='';
-    while(true){const{done,value}=await reader.read();if(done)break;for(const line of dec.decode(value).split('\n')){if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta?.text){full+=j.delta.text;recalText.innerHTML=renderReading(full);}}catch{}}}
-    recalText.classList.remove('streaming');
-    recalText.innerHTML=renderReading(full);
-  }catch(e){recalLoad.style.display='none';}
-});
-
 function renderReading(text){
   let html='';
   const lines=text.split('\n');
   let bodyBuffer=[];
-
-  const flushBody=()=>{
-    const body=bodyBuffer.join(' ').trim();
-    if(body) html+=`<div class="rsection-body">${body}</div>`;
-    bodyBuffer=[];
-  };
-
+  const flushBody=()=>{const body=bodyBuffer.join(' ').trim();if(body)html+='<div class="rsection-body">'+body+'</div>';bodyBuffer=[];};
   for(const line of lines){
     const trimmed=line.trim();
-    if(!trimmed){
-      if(bodyBuffer.length) flushBody();
-      continue;
-    }
-    // Only treat as header if: has ** markers AND is short (a title, not body text)
-    const headerMatch=trimmed.match(/^\*\*([^*]{1,80})\*\*\s*[-—]?\s*.*$/);
-    if(headerMatch){
-      flushBody();
-      const title=headerMatch[1].trim();
-      html+=`<div class="rsection-title">${title}</div>`;
-    } else {
-      // Strip any stray ** and add to body
-      bodyBuffer.push(trimmed.replace(/\*\*/g,''));
-    }
+    if(!trimmed){if(bodyBuffer.length)flushBody();continue;}
+    const hm=trimmed.match(/^\*\*([^*]{1,80})\*\*/);
+    if(hm){flushBody();html+='<div class="rsection-title">'+hm[1].trim()+'</div>';}
+    else{bodyBuffer.push(trimmed.replace(/\*\*/g,''));}
   }
   flushBody();
   return html;
 }
+
+async function generateVerification(readingText,passedMonths,name,ctx){
+  const verifySection=document.getElementById('verify-section');
+  const verifyQs=document.getElementById('verify-questions');
+  const recalBtn=document.getElementById('recalibrate-btn');
+  verifySection.style.display='block';
+  verifyQs.innerHTML='<div class="loading" style="padding:20px 0;font-size:13px;color:#9a94b0;letter-spacing:2px;font-family:sans-serif;animation:pulse 1.5s ease-in-out infinite;">Preparing questions</div>';
+  const prompt='You are analyzing a fate reading to extract verifiable past predictions.\n\nThe reading was for '+name+'. Today is '+ctx.todayStr+'.\nAlready passed months this year: '+passedMonths.join(', ')+'.\n\nReading:\n---\n'+readingText+'\n---\n\nExtract up to '+Math.min(passedMonths.length,3)+' specific predictions about the already-passed months.\n\nFor each prediction, generate exactly 3 response options that are specific to what was predicted, representing genuinely different realities, max 6 words each.\n\nRespond ONLY with valid JSON:\n[\n  {\n    "month": "January",\n    "prediction": "One sentence of what was predicted for this month",\n    "options": ["Option A", "Option B", "Option C"]\n  }\n]\n\nIf no specific predictions about past months, return: []';
+  try{
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,stream:false,messages:[{role:'user',content:prompt}]})});
+    const data=await res.json();
+    const raw=(data.content&&data.content[0]&&data.content[0].text)||'[]';
+    const questions=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    if(!questions.length){verifySection.style.display='none';return;}
+    window._verifyQuestions=questions;
+    window._verifyAnswers={};
+    window._verifyCtx=ctx;
+    window._verifyName=name;
+    verifyQs.innerHTML=questions.map((q,i)=>'<div class="verify-card"><div class="verify-month">'+q.month.toUpperCase()+'</div><div class="verify-q">'+q.prediction+'</div><div class="verify-options">'+q.options.map((opt,j)=>'<button class="verify-opt" data-q="'+i+'" onclick="selectOpt(this,'+i+',\''+opt.replace(/'/g,"\\'")+'\')"  >'+opt+'</button>').join('')+'</div></div>').join('');
+    recalBtn.style.display='block';
+  }catch(e){verifySection.style.display='none';}
+}
+
+window.selectOpt=function(el,qIdx,val){
+  document.querySelectorAll('.verify-opt[data-q="'+qIdx+'"]').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  window._verifyAnswers[qIdx]=val;
+  const qs=window._verifyQuestions||[];
+  if(qs.every((_,i)=>window._verifyAnswers[i]))document.getElementById('recalibrate-btn').style.borderColor='var(--gold)';
+};
+
+document.getElementById('recalibrate-btn').addEventListener('click',async()=>{
+  const qs=window._verifyQuestions||[],ans=window._verifyAnswers||{},ctx=window._verifyCtx,name=window._verifyName;
+  if(!qs.every((_,i)=>ans[i])){document.querySelector('.verify-card').style.borderColor='rgba(229,115,115,0.4)';return;}
+  document.getElementById('verify-section').style.display='none';
+  const recalLoad=document.getElementById('recalibrate-loading'),recalText=document.getElementById('recalibrate-text');
+  recalLoad.style.display='block';
+  const contextSummary=qs.map((q,i)=>q.month+': Predicted "'+q.prediction+'" — what actually happened: "'+ans[i]+'"').join('\n');
+  const prompt='Recalibrate a fate reading for '+name+' based on what actually happened.\n\nCHART: Four Pillars: '+ctx.pillarTxt+'\nElements: '+ctx.elTxt+'\nPlanets: '+ctx.planetTxt+'\n'+ctx.daeunTxt+'\n'+ctx.curD+'\n\nWHAT ACTUALLY HAPPENED:\n'+contextSummary+'\n\nToday is '+ctx.todayStr+'. Give updated forecast for '+ctx.remainingMonths.join(', ')+' of '+ctx.NOW_YEAR+' and into '+ctx.NEXT_YEAR+'.\n\nDo NOT mention the original reading. Zero jargon. Speak directly to '+name+'. Specific months and timing. Bold section headers.';
+  try{
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,stream:true,messages:[{role:'user',content:prompt}]})});
+    recalLoad.style.display='none';recalText.classList.add('streaming');
+    const dec=new TextDecoder(),reader=res.body.getReader();let full='';
+    while(true){const{done,value}=await reader.read();if(done)break;for(const line of dec.decode(value).split('\n')){if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta&&j.delta.text){full+=j.delta.text;recalText.innerHTML=renderReading(full);}}catch{}}}
+    recalText.classList.remove('streaming');recalText.innerHTML=renderReading(full);
+  }catch(e){recalLoad.style.display='none';}
+});
 
 document.getElementById('submitbtn').addEventListener('click',async()=>{
   const name=document.getElementById('name').value.trim();
@@ -504,131 +428,105 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
   document.getElementById('submitbtn').textContent='CALCULATING...';
   if(!bCity){const r=await geocode(bCityV);if(r.length)bCity=r[0];}
   if(!cCity){const r=await geocode(cCityV);if(r.length)cCity=r[0];}
-  const[year,month,day]=dateV.split('-').map(Number);
+  const parts=dateV.split('-');const year=parseInt(parts[0]),month=parseInt(parts[1]),day=parseInt(parts[2]);
   const hour=timeV?parseInt(timeV.split(':')[0]):12;
-  const{pillars,notes,corrTime,mStemIdx,mBrIdx,yIdx,dIdx,birthJD}=calcSaju(year,month,day,timeV||null,topt,bCity?.lon??null);
+  const sajuResult=calcSaju(year,month,day,timeV||null,topt,bCity?bCity.lon:null);
+  const pillars=sajuResult.pillars,notes=sajuResult.notes,corrTime=sajuResult.corrTime;
+  const mStemIdx=sajuResult.mStemIdx,mBrIdx=sajuResult.mBrIdx,yIdx=sajuResult.yIdx,birthJD=sajuResult.birthJD;
   const elCounts=countEl(pillars);
-  const planets=calcPlanets(year,month,day,hour,bCity?.lat,bCity?.lon);
-  const{cycles,startAge}=calcDaeun(year,gender,mStemIdx,mBrIdx,yIdx,birthJD);
+  const planets=calcPlanets(year,month,day,hour,bCity?bCity.lat:null,bCity?bCity.lon:null);
+  const daeunResult=calcDaeun(year,gender,mStemIdx,mBrIdx,yIdx,birthJD);
+  const cycles=daeunResult.cycles;
 
   const todayObj=new Date();
-  const NOW_YEAR=todayObj.getFullYear();
-  const NEXT_YEAR=NOW_YEAR+1;
-  const NOW_MONTH=todayObj.getMonth()+1;
-  const NOW_DAY=todayObj.getDate();
+  const NOW_YEAR=todayObj.getFullYear(),NEXT_YEAR=NOW_YEAR+1;
+  const NOW_MONTH=todayObj.getMonth()+1,NOW_DAY=todayObj.getDate();
   const MONTH_NAMES=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const todayStr=`${MONTH_NAMES[NOW_MONTH-1]} ${NOW_DAY}, ${NOW_YEAR}`;
+  const todayStr=MONTH_NAMES[NOW_MONTH-1]+' '+NOW_DAY+', '+NOW_YEAR;
   const passedMonths=MONTH_NAMES.slice(0,NOW_MONTH-1);
   const remainingMonths=MONTH_NAMES.slice(NOW_MONTH-1);
-
   let currentAge=NOW_YEAR-year;
   if(NOW_MONTH<month||(NOW_MONTH===month&&NOW_DAY<day))currentAge--;
+
   document.getElementById('form-area').style.display='none';
   document.getElementById('results').style.display='block';
   document.getElementById('out-name').textContent=name;
-  document.getElementById('out-meta').innerHTML=`<b>${dateV}</b>${timeV?' · '+timeV:' · time unknown'} · Born in <b>${bCityV}</b> · Now in <b>${cCityV}</b> · Age <b>${currentAge}</b>`;
+  document.getElementById('out-meta').innerHTML='<b>'+dateV+'</b>'+(timeV?' · '+timeV:' · time unknown')+' · Born in <b>'+bCityV+'</b> · Now in <b>'+cCityV+'</b> · Age <b>'+currentAge+'</b>';
+
   let currentCycle=null;
-  document.getElementById('daeun-track').innerHTML=cycles.map(c=>{const cur=currentAge>=c.ageStart&&currentAge<=c.ageEnd;const past=currentAge>c.ageEnd;if(cur)currentCycle=c;return`<div class="dblock${cur?' current':''}${past?' past':''}"><div class="dage">${c.ageStart}–${c.ageEnd}</div><div class="dstem">${c.stem}</div><div class="dbranch">${c.branch}</div><div class="dyear">${c.yearStart}–${c.yearEnd}</div></div>`;}).join('');
-  document.getElementById('current-label').textContent=currentCycle?`▲ You are currently in the ${currentCycle.yearStart}–${currentCycle.yearEnd} cycle, age ${currentAge}`:'';
-  document.getElementById('pgrid').innerHTML=pillars.map(p=>`<div class="pillar"><div class="plab">${p.label}</div><div class="pstem">${p.stem}</div><div class="pbranch">${p.branch}</div><div class="psub">${p.stemEl}/${p.branchEl}</div></div>`).join('');
-  document.getElementById('elrow').innerHTML=Object.entries(elCounts).filter(([el])=>el!=='?').map(([el,c])=>`<span class="eltag ${EL_C[el]}">${EL_H[el]} ${el}×${c}</span>`).join('');
+  document.getElementById('daeun-track').innerHTML=cycles.map(c=>{
+    const cur=currentAge>=c.ageStart&&currentAge<=c.ageEnd;
+    const past=currentAge>c.ageEnd;
+    if(cur)currentCycle=c;
+    return '<div class="dblock'+(cur?' current':'')+(past?' past':'')+'"><div class="dage">'+c.ageStart+'–'+c.ageEnd+'</div><div class="dstem">'+c.stem+'</div><div class="dbranch">'+c.branch+'</div><div class="dyear">'+c.yearStart+'–'+c.yearEnd+'</div></div>';
+  }).join('');
+  document.getElementById('current-label').textContent=currentCycle?'▲ You are currently in the '+currentCycle.yearStart+'–'+currentCycle.yearEnd+' cycle, age '+currentAge:'';
+  document.getElementById('pgrid').innerHTML=pillars.map(p=>'<div class="pillar"><div class="plab">'+p.label+'</div><div class="pstem">'+p.stem+'</div><div class="pbranch">'+p.branch+'</div><div class="psub">'+p.stemEl+'/'+p.branchEl+'</div></div>').join('');
+  document.getElementById('elrow').innerHTML=Object.entries(elCounts).filter(([el])=>el!=='?').map(([el,c])=>'<span class="eltag '+EL_C[el]+'">'+EL_H[el]+' '+el+'x'+c+'</span>').join('');
   document.getElementById('accnote').textContent=[corrTime?'Corrected: '+corrTime:'',...notes].filter(Boolean).join(' · ');
-  document.getElementById('plgrid').innerHTML=planets.map(p=>`<div class="plrow"><span class="plname">${p.sym} ${p.name}</span><span class="plsign">${ZODIAC[p.sign]}</span><span class="pldeg">${(p.lon%30).toFixed(1)}°</span></div>`).join('');
+  document.getElementById('plgrid').innerHTML=planets.map(p=>'<div class="plrow"><span class="plname">'+p.sym+' '+p.name+'</span><span class="plsign">'+ZODIAC[p.sign]+'</span><span class="pldeg">'+((p.lon%30).toFixed(1))+'°</span></div>').join('');
 
-  const pillarTxt=pillars.map(p=>`${p.label}: ${p.stem}${p.branch} (${p.stemEl}/${p.branchEl})`).join(', ');
-  const planetTxt=planets.map(p=>`${p.sym}${p.name}: ${ZODIAC[p.sign]} ${(p.lon%30).toFixed(1)}°`).join(', ');
-  const elTxt=Object.entries(elCounts).filter(([e])=>e!=='?').map(([e,c])=>`${e}×${c}`).join(' ');
-  const daeunTxt=cycles.map(c=>`Ages ${c.ageStart}-${c.ageEnd} (${c.yearStart}-${c.yearEnd}): ${c.stem}${c.branch} ${c.stemEl}/${c.branchEl}`).join('\n');
-  const curD=currentCycle?`CURRENT CYCLE (${currentCycle.yearStart}-${currentCycle.yearEnd}): ${currentCycle.stem}${currentCycle.branch} ${currentCycle.stemEl}/${currentCycle.branchEl}`:'';
-  const curYearIdx=((NOW_YEAR-4)%60+60)%60;
-  const nextYearIdx=((NEXT_YEAR-4)%60+60)%60;
-  const curYearEnergy=`${STEMS[curYearIdx%10]}${BRANCHES[curYearIdx%12]} ${STEM_EL[curYearIdx%10]}/${BRANCH_EL[curYearIdx%12]}`;
-  const nextYearEnergy=`${STEMS[nextYearIdx%10]}${BRANCHES[nextYearIdx%12]} ${STEM_EL[nextYearIdx%10]}/${BRANCH_EL[nextYearIdx%12]}`;
+  const pillarTxt=pillars.map(p=>p.label+': '+p.stem+p.branch+' ('+p.stemEl+'/'+p.branchEl+')').join(', ');
+  const planetTxt=planets.map(p=>p.sym+p.name+': '+ZODIAC[p.sign]+' '+((p.lon%30).toFixed(1))+'°').join(', ');
+  const elTxt=Object.entries(elCounts).filter(([e])=>e!=='?').map(([e,c])=>e+'x'+c).join(' ');
+  const daeunTxt=cycles.map(c=>'Ages '+c.ageStart+'-'+c.ageEnd+' ('+c.yearStart+'-'+c.yearEnd+'): '+c.stem+c.branch+' '+c.stemEl+'/'+c.branchEl).join('\n');
+  const curD=currentCycle?'CURRENT CYCLE ('+currentCycle.yearStart+'-'+currentCycle.yearEnd+'): '+currentCycle.stem+currentCycle.branch+' '+currentCycle.stemEl+'/'+currentCycle.branchEl:'';
+  const curYearIdx=((NOW_YEAR-4)%60+60)%60,nextYearIdx=((NEXT_YEAR-4)%60+60)%60;
+  const curYearEnergy=STEMS[curYearIdx%10]+BRANCHES[curYearIdx%12]+' '+STEM_EL[curYearIdx%10]+'/'+BRANCH_EL[curYearIdx%12];
+  const nextYearEnergy=STEMS[nextYearIdx%10]+BRANCHES[nextYearIdx%12]+' '+STEM_EL[nextYearIdx%10]+'/'+BRANCH_EL[nextYearIdx%12];
 
-  const structure = focus==='currentyear' ? `
-**Where You Are in ${NOW_YEAR}** — what this moment in the year means, what phase you're entering now
-**${MONTH_NAMES[NOW_MONTH-1]} through June** — specific predictions month by month
-**July through September** — what this window holds
-**October through December** — how the year closes out
-**The One Thing** — the single most important action to take before ${NOW_YEAR} ends`
-  : focus==='nextyear' ? `
-**The Theme of ${NEXT_YEAR}** — what this year is fundamentally about
-**January through June** — first half predictions
-**July through December** — second half predictions
-**Your Biggest Opportunity** — the single best window in ${NEXT_YEAR} and what to do
-**What to Prepare Now** — 3 things to do before ${NEXT_YEAR} starts`
-  : `
-**Where You Stand Right Now** — what this exact moment means, what cycle they're in
-**The Next Three Years** — ${NOW_YEAR}, ${NEXT_YEAR}, ${NOW_YEAR+2} specific predictions
-**Your Biggest Window** — when the most significant opportunity of the next decade arrives
-**What Both Systems Agree On** — the prediction appearing in BOTH Eastern and Western timing
-**Act On This Now** — 3 specific actions`;
+  const structure=focus==='currentyear'?
+    '**Where You Are in '+NOW_YEAR+'** — what this moment means and what phase you are entering\n**'+MONTH_NAMES[NOW_MONTH-1]+' through June** — specific predictions month by month\n**July through September** — what this window holds\n**October through December** — how the year closes\n**The One Thing** — the single most important action before '+NOW_YEAR+' ends'
+  :focus==='nextyear'?
+    '**The Theme of '+NEXT_YEAR+'** — what this year is fundamentally about\n**January through June** — first half predictions month by month\n**July through December** — second half predictions\n**Your Biggest Opportunity** — the single best window in '+NEXT_YEAR+'\n**What to Prepare Now** — 3 concrete things to do before '+NEXT_YEAR+' starts'
+  :
+    '**Where You Stand Right Now** — what this exact moment means, what cycle you are in\n**The Next Three Years** — '+NOW_YEAR+', '+NEXT_YEAR+', '+(NOW_YEAR+2)+' specific predictions for each\n**Your Biggest Window** — when the most significant opportunity of the next decade arrives\n**What Both Systems Agree On** — the prediction appearing in BOTH Eastern and Western timing\n**Act On This Now** — 3 specific actions';
 
   const focusMap={
-    general:`the major fate turning points across the next 5-10 years — when the big shifts happen, what each phase is building toward, and what their overall destiny arc looks like`,
-    career:`their career and financial future — when their biggest professional breakthrough arrives, what ${NOW_YEAR}-${NOW_YEAR+2} look like for money and ambition, and the single most important career move to make right now`,
-    love:`their romantic future — what kind of relationship is coming, when the most significant romantic window opens, what patterns are ending, and what ${NOW_YEAR}-${NOW_YEAR+1} holds for their love life`,
-    currentyear:`the rest of ${NOW_YEAR} specifically — today is ${todayStr}, so only predict ${remainingMonths.join(', ')}. Month by month where possible. What opportunities are still ahead, what to watch out for, the most important thing to do before ${NOW_YEAR} ends`,
-    nextyear:`all of ${NEXT_YEAR} specifically — quarter by quarter predictions. The year's dominant theme, when the best windows open, when to be careful, what action to take each quarter`,
-    health:`their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now, how their energy shifts over the next 3 years`
+    general:'the major fate turning points across the next 5-10 years — when the big shifts happen, what each phase is building toward, and what their overall destiny arc looks like',
+    career:'their career and financial future — when their biggest professional breakthrough arrives, what '+NOW_YEAR+'-'+(NOW_YEAR+2)+' look like for money and ambition, and the single most important career move to make right now',
+    love:'their romantic future — what kind of relationship is coming, when the most significant romantic window opens, what patterns are ending, and what '+NOW_YEAR+'-'+NEXT_YEAR+' holds for their love life',
+    currentyear:'the rest of '+NOW_YEAR+' specifically — today is '+todayStr+', so only predict '+remainingMonths.join(', ')+'. Month by month where possible.',
+    nextyear:'all of '+NEXT_YEAR+' specifically — cover ALL months January through December with specific predictions.',
+    health:'their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now'
   };
 
-  const prompt=`You are the world's most accurate fate reader combining Eastern Four Pillars (사주) and Western astrology into one unified reading.
-
-ASTROLOGICAL DATA (use this to understand their fate — do NOT mention any of these symbols, element names, planet names, or sign names in the reading):
-Four Pillars: ${pillarTxt}
-Element balance: ${elTxt}
-Day Master: ${pillars[2].stem} ${pillars[2].stemEl}
-Western planets at birth: ${planetTxt}
-10-YEAR FATE CYCLES:
-${daeunTxt}
-${curD}
-This year ${NOW_YEAR} energy: ${curYearEnergy}
-Next year ${NEXT_YEAR} energy: ${nextYearEnergy}
-Eastern/Western alignment: Eastern cycles give 10-year precision. Western transits narrow to specific months. Jupiter cycle = 12 years. Saturn return at 29-30.
-PERSON: ${name}, ${gender}, born ${dateV}${timeV?' at '+timeV:''} in ${bCityV}, lives in ${cCityV}, currently age ${currentAge}.
-${focus==='currentyear'?`Today is ${todayStr}. Only predict from today forward.`:focus==='nextyear'?`Today is ${todayStr}. ${NEXT_YEAR} is entirely future — cover ALL months January through December.`:`Today is ${todayStr}.`}
-
-TASK: Tell them ${focusMap[focus]||focusMap.general}.
-
-REQUIRED — every prediction must be this specific:
-BAD: "August will bring a significant opportunity professionally."
-GOOD: "August is when your current cycle peaks for visibility. If you have been building something over the past year, this is the month to show it publicly — specifically the 2nd and 3rd weeks. If you have nothing concrete to show, August passes as a missed window. The person who opens this door is already in your life, not someone new."
-
-Apply that level of specificity to every prediction. Every claim needs: a specific month/year, a concrete domain (career/money/relationship/health), and a reason WHY this timing based on the chart.
-
-Be honest — if a period is genuinely hard, say it is hard and when it ends. Do not dress up difficult periods. Fake-positive readings feel fake. The hard truths are what make people trust the good predictions.
-
-Where both systems point to the same timing, emphasize it strongly. Where they conflict, say so — that tension is valuable information.
-
-Zero jargon — no element names, pillar names, planet names, sign names. Speak directly to ${name} as "you". Never start a paragraph with just a year number like "2026" or "2027" — always write "In 2026" or "The year 2026".
-
-Structure — use these EXACT bold headers, each on its own line. Every section MUST have content — do not leave any section empty:
-${structure}
-
-Write 1-2 paragraphs per section maximum. Complete every sentence. Never trail off. Never skip a section. Total reading should be around 400-500 words.`;
+  const prompt='You are the world\'s most accurate fate reader combining Eastern Four Pillars and Western astrology into one unified reading.\n\nASTROLOGICAL DATA (do NOT mention any symbols, element names, planet names, or sign names in the reading):\nFour Pillars: '+pillarTxt+'\nElement balance: '+elTxt+'\nDay Master: '+pillars[2].stem+' '+pillars[2].stemEl+'\nWestern planets at birth: '+planetTxt+'\n10-YEAR FATE CYCLES:\n'+daeunTxt+'\n'+curD+'\nThis year '+NOW_YEAR+' energy: '+curYearEnergy+'\nNext year '+NEXT_YEAR+' energy: '+nextYearEnergy+'\nEastern cycles give 10-year precision. Western transits narrow to specific months. Jupiter cycle = 12 years. Saturn return at 29-30.\nPERSON: '+name+', '+gender+', born '+dateV+(timeV?' at '+timeV:'')+' in '+bCityV+', lives in '+cCityV+', age '+currentAge+'.\n'+(focus==='currentyear'?'Today is '+todayStr+'. Only predict from today forward.':focus==='nextyear'?'Today is '+todayStr+'. '+NEXT_YEAR+' is entirely future — cover ALL months January through December.':'Today is '+todayStr+'.')+'\n\nTASK: Tell them '+(focusMap[focus]||focusMap.general)+'.\n\nREQUIRED — every prediction must be this specific:\nBAD: "August will bring a significant opportunity professionally."\nGOOD: "August is when your current cycle peaks for visibility. If you have been building something over the past year, this is the month to show it publicly — specifically the 2nd and 3rd weeks. If you have nothing concrete to show, August passes as a missed window. The person who opens this door is already in your life, not someone new."\n\nApply that level of specificity everywhere. Every prediction needs: a specific month/year, a concrete domain (career/money/relationship/health), and a reason WHY based on the chart.\n\nBe honest — if a period is genuinely hard, say so and when it ends. Fake-positive readings feel fake. Hard truths make good predictions credible.\n\nWhere both systems point to the same timing, emphasize it. Where they conflict, say so.\n\nZero jargon. Speak directly to '+name+' as "you". Never start a paragraph with just a year number — always write "In 2026" not just "2026".\n\nStructure — use these EXACT bold headers, each on its own line. Every section MUST have content:\n'+structure+'\n\n1-2 paragraphs per section. Complete every sentence. Never trail off. Total around 400-500 words.';
 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
-  loadEl.style.display='block';textEl.textContent='';textEl.classList.remove('streaming');
+  loadEl.style.display='block';textEl.innerHTML='';textEl.classList.remove('streaming');
   try{
     const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4000,stream:true,messages:[{role:'user',content:prompt}]})});
-    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||`Error ${res.status}`);}
+    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error&&e.error.message?e.error.message:'Error '+res.status);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
     let fullText='';
-    while(true){const{done,value}=await reader.read();if(done)break;for(const line of dec.decode(value).split('\n')){if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta?.text){fullText+=j.delta.text;textEl.innerHTML=renderReading(fullText);}}catch{}}}
+    while(true){
+      const rd=await reader.read();
+      if(rd.done)break;
+      for(const line of dec.decode(rd.value).split('\n')){
+        if(!line.startsWith('data: '))continue;
+        const d=line.slice(6);
+        if(d==='[DONE]')continue;
+        try{const j=JSON.parse(d);if(j.type==='content_block_delta'&&j.delta&&j.delta.text){fullText+=j.delta.text;textEl.innerHTML=renderReading(fullText);}}catch{}
+      }
+    }
     textEl.classList.remove('streaming');
     textEl.innerHTML=renderReading(fullText);
-
-    // If current year focus and past months exist, generate verification questions
-    if(focus==='currentyear' && NOW_MONTH > 1 && passedMonths.length > 0){
-      generateVerification(fullText, passedMonths, name, {pillarTxt,planetTxt,elTxt,daeunTxt,curD,todayStr,currentAge,dateV,timeV,bCityV,cCityV,gender,curYearEnergy,nextYearEnergy,NOW_YEAR,NEXT_YEAR,passedMonths,remainingMonths,errEl});
+    if(focus==='currentyear'&&NOW_MONTH>1&&passedMonths.length>0){
+      generateVerification(fullText,passedMonths,name,{pillarTxt,planetTxt,elTxt,daeunTxt,curD,todayStr,currentAge,dateV,timeV,bCityV,cCityV,gender,NOW_YEAR,NEXT_YEAR,passedMonths,remainingMonths});
     }
   }catch(err){loadEl.style.display='none';errEl.textContent=err.message;errEl.style.display='block';}
   document.getElementById('submitbtn').disabled=false;
   document.getElementById('submitbtn').textContent='READ MY FUTURE';
 });
-document.getElementById('resetbtn').addEventListener('click',()=>{document.getElementById('results').style.display='none';document.getElementById('form-area').style.display='block';});
+
+document.getElementById('resetbtn').addEventListener('click',()=>{
+  document.getElementById('results').style.display='none';
+  document.getElementById('form-area').style.display='block';
+  document.getElementById('verify-section').style.display='none';
+  document.getElementById('recalibrate-text').innerHTML='';
+});
 </script>
 
 
