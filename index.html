@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/hyeinbaek/Downloads/index_28.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#07080f">
 <title>Cosmic Saju</title>
-<link rel="manifest" href="file:///manifest.json">
-<link href="./index_files/css2" rel="stylesheet">
+<link rel="manifest" href="/manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#07080f;--paper:#e8e4f0;--gold:#c9a84c;--red:#c0392b;--star:#a8c4e0;}
@@ -188,7 +188,7 @@ select option{background:#12131f;color:#e8e4f0;}
         <div class="field"><label class="fl">Full Name</label><input type="text" id="name" placeholder="Your name"></div>
         <div class="field"><label class="fl">Gender</label>
           <div class="gtoggle">
-            <input type="radio" name="gender" id="gf" value="female" checked=""><label for="gf">Female</label>
+            <input type="radio" name="gender" id="gf" value="female" checked><label for="gf">Female</label>
             <input type="radio" name="gender" id="gm" value="male"><label for="gm">Male</label>
           </div>
         </div>
@@ -223,11 +223,11 @@ select option{background:#12131f;color:#e8e4f0;}
       <div class="field"><label class="fl">What Do You Want to Know?</label>
         <select id="focus">
           <option value="general">My overall destiny — the next 5-10 years</option>
-          <option value="career">Career &amp; money — when does my breakthrough come</option>
+          <option value="career">Career & money — when does my breakthrough come</option>
           <option value="love">Love life — what's coming and when</option>
           <option value="currentyear">This year's forecast</option>
           <option value="nextyear">Next year's forecast</option>
-          <option value="health">Health &amp; energy — what's ahead physically</option>
+          <option value="health">Health & energy — what's ahead physically</option>
         </select>
       </div>
       <button class="submitbtn" id="submitbtn">READ MY FUTURE</button>
@@ -491,12 +491,12 @@ document.getElementById('submitbtn').addEventListener('click',async()=>{
     health:'their physical and energetic future — when their vitality is strongest, what periods carry health risks, what their body needs most right now'
   };
 
-  const prompt='You are the world\'s most accurate fate reader combining Eastern Four Pillars and Western astrology into one unified reading.\n\nASTROLOGICAL DATA (do NOT mention any symbols, element names, planet names, or sign names in the reading):\nFour Pillars: '+pillarTxt+'\nElement balance: '+elTxt+'\nDay Master: '+pillars[2].stem+' '+pillars[2].stemEl+'\nWestern planets at birth: '+planetTxt+'\n10-YEAR FATE CYCLES:\n'+daeunTxt+'\n'+curD+'\nThis year '+NOW_YEAR+' energy: '+curYearEnergy+'\nNext year '+NEXT_YEAR+' energy: '+nextYearEnergy+'\nEastern cycles give 10-year precision. Western transits narrow to specific months. Jupiter cycle = 12 years. Saturn return at 29-30.\nPERSON: '+name+', '+gender+', born '+dateV+(timeV?' at '+timeV:'')+' in '+bCityV+', lives in '+cCityV+', age '+currentAge+'.\n'+(focus==='currentyear'?'Today is '+todayStr+'. Only predict from today forward.':focus==='nextyear'?'Today is '+todayStr+'. '+NEXT_YEAR+' is entirely future — cover ALL months January through December.':'Today is '+todayStr+'.')+'\n\nTASK: Tell them '+(focusMap[focus]||focusMap.general)+'.\n\nREQUIRED — every prediction must be this specific:\nBAD: "August will bring a significant opportunity professionally."\nGOOD: "August is when your current cycle peaks for visibility. If you have been building something over the past year, this is the month to show it publicly — specifically the 2nd and 3rd weeks. If you have nothing concrete to show, August passes as a missed window. The person who opens this door is already in your life, not someone new."\n\nApply that level of specificity everywhere. Every prediction needs: a specific month/year, a concrete domain (career/money/relationship/health), and a reason WHY based on the chart.\n\nBe honest — if a period is genuinely hard, say so and when it ends. Fake-positive readings feel fake. Hard truths make good predictions credible.\n\nWhere both systems point to the same timing, emphasize it. Where they conflict, say so.\n\nZero jargon. Speak directly to '+name+' as "you". Never start a paragraph with just a year number — always write "In 2026" not just "2026".\n\nStructure — use these EXACT bold headers, each on its own line. Every section MUST have content:\n'+structure+'\n\n1-2 paragraphs per section. Complete every sentence. Never trail off. Total around 400-500 words.';
+  const prompt='You are the world\'s most accurate fate reader combining Eastern Four Pillars and Western astrology into one unified reading.\n\nASTROLOGICAL DATA (do NOT mention any symbols, element names, planet names, or sign names in the reading):\nFour Pillars: '+pillarTxt+'\nElement balance: '+elTxt+'\nDay Master: '+pillars[2].stem+' '+pillars[2].stemEl+'\nWestern planets at birth: '+planetTxt+'\n10-YEAR FATE CYCLES:\n'+daeunTxt+'\n'+curD+'\nThis year '+NOW_YEAR+' energy: '+curYearEnergy+'\nNext year '+NEXT_YEAR+' energy: '+nextYearEnergy+'\nEastern cycles give 10-year precision. Western transits narrow to specific months. Jupiter cycle = 12 years. Saturn return at 29-30.\nPERSON: '+name+', '+gender+', born '+dateV+(timeV?' at '+timeV:'')+' in '+bCityV+', lives in '+cCityV+', age '+currentAge+'.\n'+(focus==='currentyear'?'Today is '+todayStr+'. Only predict from today forward.':focus==='nextyear'?'Today is '+todayStr+'. '+NEXT_YEAR+' is entirely future — cover ALL months January through December.':'Today is '+todayStr+'.')+'\n\nTASK: Tell them '+(focusMap[focus]||focusMap.general)+'.\n\nREQUIRED — every prediction must be this specific:\nBAD: "August will bring a significant opportunity professionally."\nGOOD: "August is when your current cycle peaks for visibility. If you have been building something over the past year, this is the month to show it publicly — specifically the 2nd and 3rd weeks. If you have nothing concrete to show, August passes as a missed window. The person who opens this door is already in your life, not someone new."\n\nApply that level of specificity everywhere. Every prediction needs: a specific month/year, a concrete domain (career/money/relationship/health), and a reason WHY based on the chart.\n\nBe honest — if a period is genuinely hard, say so and when it ends. Fake-positive readings feel fake. Hard truths make good predictions credible.\n\nWhere both systems point to the same timing, emphasize it. Where they conflict, say so.\n\nZero jargon. Speak directly to '+name+' as "you". Never start a paragraph with just a year number — always write "In 2026" not just "2026".\n\nStructure — use these EXACT bold headers, each on its own line. Every section MUST have content:\n'+structure+'\n\n1-2 paragraphs per section. Complete every sentence. Never trail off. Total 300-400 words maximum. Be concise..';
 
   const loadEl=document.getElementById('loading'),textEl=document.getElementById('rtext');
   loadEl.style.display='block';textEl.innerHTML='';textEl.classList.remove('streaming');
   try{
-    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4000,stream:true,messages:[{role:'user',content:prompt}]})});
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,stream:true,messages:[{role:'user',content:prompt}]})});
     if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error&&e.error.message?e.error.message:'Error '+res.status);}
     loadEl.style.display='none';textEl.classList.add('streaming');
     const dec=new TextDecoder(),reader=res.body.getReader();
@@ -528,6 +528,5 @@ document.getElementById('resetbtn').addEventListener('click',()=>{
   document.getElementById('recalibrate-text').innerHTML='';
 });
 </script>
-
-
-</body></html>
+</body>
+</html>
